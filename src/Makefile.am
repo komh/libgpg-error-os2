@@ -65,7 +65,7 @@ BUILT_SOURCES = err-sources.h err-codes.h code-to-errno.h code-from-errno.h \
 tmp_files = _mkerrcodes.h _gpg-error.def.h mkw32errmap.tab.h mkw32errmap.map.c
 
 CLEANFILES = err-sources.h err-codes.h code-to-errno.h code-from-errno.h \
-	gpg-error.h mkerrcodes mkerrcodes.h gpg-error.def mkw32errmap.tab.h \
+	gpg-error.h mkerrcodes$(EXEEXT) mkerrcodes.h gpg-error.def mkw32errmap.tab.h \
 	mkw32errmap.map.c err-sources-sym.h err-codes-sym.h errnos-sym.h \
 	gpg-extra/errno.h mkheader $(tmp_files) lock-obj-pub.native.h
 
@@ -97,7 +97,11 @@ intllibs =
 else
 arch_sources = posix-lock.c posix-lock-obj.h posix-thread.c
 gpg_error_res =
+if HAVE_OS2_SYSTEM
+no_undefined = -no-undefined
+else
 no_undefined =
+endif
 export_symbols =
 install-def-file:
 uninstall-def-file:
@@ -181,7 +185,7 @@ gpg-error.def: Makefile gpg-error.def.in
 
 # It is correct to use $(CC_FOR_BUILD) here.  We want to run the
 # program at build time.
-mkerrcodes: mkerrcodes.c mkerrcodes.h Makefile
+mkerrcodes$(EXEEXT): mkerrcodes.c mkerrcodes.h Makefile
 	$(CC_FOR_BUILD) -I. -I$(srcdir) -o $@ $(srcdir)/mkerrcodes.c
 
 if HAVE_W32CE_SYSTEM
@@ -191,7 +195,7 @@ mkw32errmap: mkw32errmap.c mkw32errmap.tab.h Makefile
 	$(CC_FOR_BUILD) -I. -I$(srcdir) -o $@ $(srcdir)/mkw32errmap.c
 endif
 
-code-from-errno.h: mkerrcodes Makefile
+code-from-errno.h: mkerrcodes$(EXEEXT) Makefile
 	./mkerrcodes | $(AWK) -f $(srcdir)/mkerrcodes2.awk >$@
 
 errnos-sym.h: Makefile mkstrtable.awk errnos.in

@@ -89,6 +89,7 @@ AC_GNU_SOURCE
 have_w32_system=no
 have_w64_system=no
 have_w32ce_system=no
+have_os2_system=no
 case "${host}" in
     x86_64-*mingw32*)
         have_w32_system=yes
@@ -100,6 +101,9 @@ case "${host}" in
         ;;
     *-mingw32*)
         have_w32_system=yes
+        ;;
+    *-os2*)
+        have_os2_system=yes
         ;;
     *)
        ;;
@@ -236,6 +240,10 @@ AM_CONDITIONAL(CROSS_COMPILING, test x$cross_compiling = xyes)
 
 AC_DEFINE_UNQUOTED(HOST_TRIPLET_STRING, "$host", [The host triplet])
 
+if test "$have_os2_system" = yes; then
+    AC_DEFINE(HAVE_OS2_SYSTEM,1,[Defined if we run on an OS/2 API based system])
+fi
+AM_CONDITIONAL(HAVE_OS2_SYSTEM, test "$have_os2_system" = yes)
 
 #
 # Provide information about the build.
