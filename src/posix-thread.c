@@ -33,7 +33,12 @@
 
 #if USE_POSIX_THREADS
 # ifdef _POSIX_PRIORITY_SCHEDULING
-#  include <sched.h>
+#  ifdef HAVE_OS2_SYSTEM
+#   define INCL_DOS
+#   include <os2.h>
+#  else
+#   include <sched.h>
+#  endif
 # endif
 #elif USE_SOLARIS_THREADS
 # include <thread.h>
@@ -69,7 +74,11 @@ _gpgrt_yield (void)
 # ifdef _POSIX_PRIORITY_SCHEDULING
    if (pre_syscall_func)
      pre_syscall_func ();
+#  ifndef HAVE_OS2_SYSTEM
    sched_yield ();
+#  else
+   DosSleep (1);
+#  endif
    if (post_syscall_func)
      post_syscall_func ();
 # else
