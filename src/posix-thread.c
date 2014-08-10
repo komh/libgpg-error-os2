@@ -33,7 +33,12 @@
 
 #if USE_POSIX_THREADS
 # ifdef _POSIX_PRIORITY_SCHEDULING
-#  include <sched.h>
+#  ifdef __OS2__
+#   define INCL_DOS
+#   include <os2.h>
+#  else
+#   include <sched.h>
+#  endif
 # endif
 #elif USE_SOLARIS_THREADS
 # include <thread.h>
@@ -49,7 +54,11 @@ gpgrt_yield (void)
 {
 #if USE_POSIX_THREADS
 # ifdef _POSIX_PRIORITY_SCHEDULING
+#  ifdef __OS2__
+   DosSleep (1);
+#  else
    sched_yield ();
+#  endif
 # else
    return GPG_ERR_NOT_SUPPORTED;
 # endif
