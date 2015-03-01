@@ -21,7 +21,7 @@ EXTRA_DIST = HACKING errorref.txt \
 	     yat2m.c
 
 DISTCLEANFILES = gpgrt.cps yat2m-stamp.tmp yat2m-stamp $(myman_pages)
-CLEANFILES = yat2m
+CLEANFILES = yat2m$(EXEEXT)
 
 info_TEXINFOS = gpgrt.texi
 gpgrt_TEXINFOS = lgpl.texi gpl.texi
@@ -34,7 +34,7 @@ myman_pages   = gpg-error-config.1
 
 man_MANS = $(myman_pages)
 
-yat2m: yat2m.c
+yat2m$(EXEEXT): yat2m.c
 	$(CC_FOR_BUILD) -o $@ $(srcdir)/yat2m.c
 
 
@@ -46,7 +46,7 @@ yat2m-stamp: $(myman_sources)
 	          `test -f '$$file' || echo '$(srcdir)/'`$$file ; done
 	@mv -f yat2m-stamp.tmp $@
 
-yat2m-stamp: yat2m
+yat2m-stamp: yat2m$(EXEEXT)
 
 $(myman_pages) : yat2m-stamp
 	@if test -f $@; then :; else \

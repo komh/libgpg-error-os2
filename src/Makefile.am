@@ -94,7 +94,7 @@ tmp_files = _mkerrcodes.h _gpg-error.def.h mkw32errmap.tab.h mkw32errmap.map.c
 CLEANFILES = err-sources.h err-codes.h code-to-errno.h code-from-errno.h \
 	gpg-error.h mkerrcodes$(EXEEXT) mkerrcodes.h gpg-error.def mkw32errmap.tab.h \
 	mkw32errmap.map.c err-sources-sym.h err-codes-sym.h errnos-sym.h \
-	gpg-extra/errno.h mkheader $(tmp_files) lock-obj-pub.native.h
+	gpg-extra/errno.h mkheader$(EXEEXT) $(tmp_files) lock-obj-pub.native.h
 
 
 #
@@ -256,7 +256,7 @@ errnos-sym.h: Makefile mkstrtable.awk errnos.in
 		$(srcdir)/errnos.in >$@
 
 
-mkheader: mkheader.c Makefile
+mkheader$(EXEEXT): mkheader.c Makefile
 	$(CC_FOR_BUILD) -g -O0 -I. -I$(srcdir) -o $@ $(srcdir)/mkheader.c
 
 parts_of_gpg_error_h = 	 	\
@@ -276,13 +276,13 @@ else
 pre_mkheader_cmds = :
 parts_of_gpg_error_h += ./lock-obj-pub.native.h
 
-./lock-obj-pub.native.h: Makefile gen-posix-lock-obj posix-lock-obj.h
+./lock-obj-pub.native.h: Makefile gen-posix-lock-obj$(EXEEXT) posix-lock-obj.h
 	./gen-posix-lock-obj >$@
 endif
 
 # We also depend on versioninfo.rc because that is build by
 # config.status and thus has up-to-date version numbers.
-gpg-error.h: Makefile mkheader $(parts_of_gpg_error_h) \
+gpg-error.h: Makefile mkheader$(EXEEXT) $(parts_of_gpg_error_h) \
              versioninfo.rc ../config.h
 	$(pre_mkheader_cmds)
 	./mkheader $(host_os) $(host_triplet)  $(srcdir)/gpg-error.h.in \
