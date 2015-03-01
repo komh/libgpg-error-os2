@@ -1,16 +1,17 @@
 # Japanese messages for GnuPG libgpg-error
-# Copyright (C) 2010, 2012 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2012, 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgpg-error package.
 # Yasuaki Taniguchi <yasuakit@gmail.com>, 2010.
 # Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>, 2012.
+# NIIBE Yutaka <gniibe@fsij.org>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgpg-error 1.7\n"
+"Project-Id-Version: libgpg-error 1.17\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2014-04-15 14:26+0200\n"
-"PO-Revision-Date: 2013-02-23 20:09+0100\n"
-"Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
-"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2015-01-26 10:35+0100\n"
+"PO-Revision-Date: 2014-11-18 10:03+0900\n"
+"Last-Translator: NIIBE Yutaka <gniibe@fsij.org>\n"
+"Language-Team: none\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr "GPG Agent"
 
 #: src/err-sources.h:33
 msgid "Pinentry"
-msgstr "PIN 入力"
+msgstr "Pinentry"
 
 #: src/err-sources.h:34
 msgid "SCD"
@@ -75,35 +76,39 @@ msgstr "Kleopatra"
 
 #: src/err-sources.h:42
 msgid "G13"
-msgstr ""
+msgstr "G13"
 
 #: src/err-sources.h:43
 msgid "Assuan"
 msgstr "Assuan"
 
 #: src/err-sources.h:44
-msgid "Any source"
-msgstr "全てのソース"
+msgid "TLS"
+msgstr "TLS"
 
 #: src/err-sources.h:45
+msgid "Any source"
+msgstr "指定なしのソース"
+
+#: src/err-sources.h:46
 msgid "User defined source 1"
 msgstr "ユーザ定義ソース 1"
 
-#: src/err-sources.h:46
+#: src/err-sources.h:47
 msgid "User defined source 2"
 msgstr "ユーザ定義ソース 2"
 
-#: src/err-sources.h:47
+#: src/err-sources.h:48
 msgid "User defined source 3"
 msgstr "ユーザ定義ソース 3"
 
-#: src/err-sources.h:48
+#: src/err-sources.h:49
 msgid "User defined source 4"
 msgstr "ユーザ定義ソース 4"
 
-#: src/err-sources.h:49
+#: src/err-sources.h:50
 msgid "Unknown source"
-msgstr "不明なソースです"
+msgstr "不明なソース"
 
 #: src/err-codes.h:28
 msgid "Success"
@@ -119,7 +124,7 @@ msgstr "不明なパケットです"
 
 #: src/err-codes.h:31
 msgid "Unknown version in packet"
-msgstr "パケット内で不明なバージョンです"
+msgstr "パケット内の不明なバージョンです"
 
 #: src/err-codes.h:32
 msgid "Invalid public key algorithm"
@@ -127,7 +132,7 @@ msgstr "無効な公開鍵アルゴリズムです"
 
 #: src/err-codes.h:33
 msgid "Invalid digest algorithm"
-msgstr "無効な要約アルゴリズムです"
+msgstr "無効なダイジェスト・アルゴリズムです"
 
 #: src/err-codes.h:34
 msgid "Bad public key"
@@ -167,7 +172,7 @@ msgstr "無効なパケットです"
 
 #: src/err-codes.h:43
 msgid "Invalid armor"
-msgstr "無効なアスキー形式です"
+msgstr "無効なアスキー保護形式です"
 
 #: src/err-codes.h:44
 msgid "No user ID"
@@ -191,7 +196,7 @@ msgstr "不明な圧縮アルゴリズムです"
 
 #: src/err-codes.h:49
 msgid "Number is not prime"
-msgstr "数値が素数ではありません"
+msgstr "数が素数ではありません"
 
 #: src/err-codes.h:50
 msgid "Invalid encoding method"
@@ -223,19 +228,19 @@ msgstr "値が見つかりません"
 
 #: src/err-codes.h:57
 msgid "Syntax error"
-msgstr "構文エラー"
+msgstr "構文エラーです"
 
 #: src/err-codes.h:58
 msgid "Bad MPI value"
-msgstr "誤った MPI の値"
+msgstr "誤った MPI の値です"
 
 #: src/err-codes.h:59
 msgid "Invalid passphrase"
-msgstr "無効なパスフレーズ"
+msgstr "無効なパスフレーズです"
 
 #: src/err-codes.h:60
 msgid "Invalid signature class"
-msgstr "無効な署名クラス"
+msgstr "無効な署名クラスです"
 
 #: src/err-codes.h:61
 msgid "Resources exhausted"
@@ -243,11 +248,11 @@ msgstr "資源を使い果たしました"
 
 #: src/err-codes.h:62
 msgid "Invalid keyring"
-msgstr "無効な鍵リング"
+msgstr "無効な鍵リングです"
 
 #: src/err-codes.h:63
 msgid "Trust DB error"
-msgstr "信用 DB エラー"
+msgstr "信用 DB エラーです"
 
 #: src/err-codes.h:64
 msgid "Bad certificate"
@@ -263,7 +268,7 @@ msgstr "予期しないエラーです"
 
 #: src/err-codes.h:67
 msgid "Time conflict"
-msgstr "時間の競合です"
+msgstr "時間の不一致です"
 
 #: src/err-codes.h:68
 msgid "Keyserver error"
@@ -274,9 +279,8 @@ msgid "Wrong public key algorithm"
 msgstr "誤った公開鍵アルゴリズムです"
 
 #: src/err-codes.h:70
-#, fuzzy
 msgid "Tribute to D. A."
-msgstr " コピー"
+msgstr "ダグラス・アダムスに捧ぐ"
 
 #: src/err-codes.h:71
 msgid "Weak encryption key"
@@ -292,7 +296,7 @@ msgstr "無効な引数です"
 
 #: src/err-codes.h:74
 msgid "Syntax error in URI"
-msgstr "URI で構文エラーです"
+msgstr "URIの構文エラーです"
 
 #: src/err-codes.h:75
 msgid "Invalid URI"
@@ -308,7 +312,7 @@ msgstr "不明なホストです"
 
 #: src/err-codes.h:78
 msgid "Selftest failed"
-msgstr "自己試験に失敗しました"
+msgstr "セルフテストに失敗しました"
 
 #: src/err-codes.h:79
 msgid "Data not encrypted"
@@ -336,7 +340,7 @@ msgstr "誤った証明書連鎖です"
 
 #: src/err-codes.h:85
 msgid "Missing certificate"
-msgstr "証明書がありません"
+msgstr "証明書が欠如しています"
 
 #: src/err-codes.h:86
 msgid "No data"
@@ -344,7 +348,7 @@ msgstr "データがありません"
 
 #: src/err-codes.h:87
 msgid "Bug"
-msgstr "バグ"
+msgstr "バグです"
 
 #: src/err-codes.h:88
 msgid "Not supported"
@@ -356,19 +360,19 @@ msgstr "無効な操作コードです"
 
 #: src/err-codes.h:90
 msgid "Timeout"
-msgstr "タイムアウト"
+msgstr "タイムアウトです"
 
 #: src/err-codes.h:91
 msgid "Internal error"
-msgstr "内部エラー"
+msgstr "内部エラーです"
 
 #: src/err-codes.h:92
 msgid "EOF (gcrypt)"
-msgstr "EOF (gcrypt)"
+msgstr "EOF (gcrypt)です"
 
 #: src/err-codes.h:93
 msgid "Invalid object"
-msgstr "無効なオブジェクト"
+msgstr "無効なオブジェクトです"
 
 #: src/err-codes.h:94
 msgid "Provided object is too short"
@@ -380,16 +384,15 @@ msgstr "与えられたオブジェクトが大きすぎます"
 
 #: src/err-codes.h:96
 msgid "Missing item in object"
-msgstr "オブジェクト内に項目がありません"
+msgstr "オブジェクト内に項目が欠如しています"
 
 #: src/err-codes.h:97
 msgid "Not implemented"
 msgstr "実装されていません"
 
 #: src/err-codes.h:98
-#, fuzzy
 msgid "Conflicting use"
-msgstr "一貫していない #~ の使用"
+msgstr "対立する使用です"
 
 #: src/err-codes.h:99
 msgid "Invalid cipher mode"
@@ -409,7 +412,7 @@ msgstr "結果が切り詰められました"
 
 #: src/err-codes.h:103
 msgid "Incomplete line"
-msgstr "完全でない行です"
+msgstr "不完全な行です"
 
 #: src/err-codes.h:104
 msgid "Invalid response"
@@ -417,11 +420,9 @@ msgstr "無効な応答です"
 
 #: src/err-codes.h:105
 msgid "No agent running"
-msgstr "エージェントが実行されていません"
+msgstr "エージェントが動いていません"
 
 #: src/err-codes.h:106
-#, fuzzy
-#| msgid "agent error"
 msgid "Agent error"
 msgstr "エージェントエラーです"
 
@@ -451,11 +452,11 @@ msgstr "サポートされていないアルゴリズムです"
 
 #: src/err-codes.h:113
 msgid "No pinentry"
-msgstr "PIN 入力がありません"
+msgstr "Pinentryがありません"
 
 #: src/err-codes.h:114
 msgid "pinentry error"
-msgstr "PIN 入力エラー"
+msgstr "Pinentryエラー"
 
 #: src/err-codes.h:115
 msgid "Bad PIN"
@@ -478,18 +479,16 @@ msgid "Wrong card"
 msgstr "誤ったカードです"
 
 #: src/err-codes.h:120
-#, fuzzy
 msgid "No dirmngr"
-msgstr "-  < 翻訳がありません >"
+msgstr "dirmngrがありません"
 
 #: src/err-codes.h:121
-#, fuzzy
 msgid "dirmngr error"
-msgstr "%s サブプロセス入出力エラー"
+msgstr "dirmngr のエラー"
 
 #: src/err-codes.h:122
 msgid "Certificate revoked"
-msgstr "証明書が破棄されました"
+msgstr "証明書が廃止されました"
 
 #: src/err-codes.h:123
 msgid "No CRL known"
@@ -565,7 +564,7 @@ msgstr "カードが存在していません"
 
 #: src/err-codes.h:141
 msgid "No PKCS15 application"
-msgstr "PKCS15 アプリケーションではありません"
+msgstr "PKCS15 アプリケーションがありません"
 
 #: src/err-codes.h:142
 msgid "Not confirmed"
@@ -629,7 +628,7 @@ msgstr "値がありません"
 
 #: src/err-codes.h:157
 msgid "Hardware problem"
-msgstr "ハードウェア問題です"
+msgstr "ハードウェアの問題です"
 
 #: src/err-codes.h:158
 msgid "PIN blocked"
@@ -717,7 +716,7 @@ msgstr "無効な暗号エンジンです"
 
 #: src/err-codes.h:179
 msgid "Public key not trusted"
-msgstr "信用していない公開鍵です"
+msgstr "信用されていない公開鍵です"
 
 #: src/err-codes.h:180
 msgid "Decryption failed"
@@ -744,9 +743,8 @@ msgid "Duplicated value"
 msgstr "重複した値です"
 
 #: src/err-codes.h:186
-#, fuzzy
 msgid "Missing action"
-msgstr "何もしない"
+msgstr "アクションが欠如しています"
 
 #: src/err-codes.h:187
 msgid "ASN.1 module not found"
@@ -790,7 +788,7 @@ msgstr "プロトコル違反"
 
 #: src/err-codes.h:197
 msgid "Invalid MAC"
-msgstr "無効な MAC アドレス"
+msgstr "無効な MACです"
 
 #: src/err-codes.h:198
 msgid "Invalid request"
@@ -801,9 +799,8 @@ msgid "Unknown extension"
 msgstr "未知の拡張子"
 
 #: src/err-codes.h:200
-#, fuzzy
 msgid "Unknown critical extension"
-msgstr "拡張ファイルを編集(&E)"
+msgstr "不明のクリチカル拡張です"
 
 #: src/err-codes.h:201
 msgid "Locked"
@@ -811,16 +808,15 @@ msgstr "ロックされています"
 
 #: src/err-codes.h:202
 msgid "Unknown option"
-msgstr "未知のオプション"
+msgstr "未知のオプションです"
 
 #: src/err-codes.h:203
 msgid "Unknown command"
-msgstr "未知のコマンド"
+msgstr "未知のコマンドです"
 
 #: src/err-codes.h:204
-#, fuzzy
 msgid "Not operational"
-msgstr "オペアンプ"
+msgstr "操作できません"
 
 #: src/err-codes.h:205
 msgid "No passphrase given"
@@ -828,108 +824,87 @@ msgstr "パスフレーズが与えられていません"
 
 #: src/err-codes.h:206
 msgid "No PIN given"
-msgstr "暗証番号が与えられていません"
+msgstr "PINが与えられていません"
 
 #: src/err-codes.h:207
-#, fuzzy
 msgid "Not enabled"
-msgstr "ロックされていません"
+msgstr "有効となってません"
 
 #: src/err-codes.h:208
-#, fuzzy
 msgid "No crypto engine"
-msgstr "無効な暗号エンジンです"
+msgstr "暗号エンジンがありません"
 
 #: src/err-codes.h:209
-#, fuzzy
 msgid "Missing key"
-msgstr "値がありません"
+msgstr "鍵がありません"
 
 #: src/err-codes.h:210
-#, fuzzy
 msgid "Too many objects"
-msgstr "CMS オブジェクトではありません"
+msgstr "オブジェクトが多すぎます"
 
 #: src/err-codes.h:211
 msgid "Limit reached"
-msgstr ""
+msgstr "限界に達しました"
 
 #: src/err-codes.h:212
-#, fuzzy
 msgid "Not initialized"
-msgstr "カードが初期化されていません"
+msgstr "初期化されていません"
 
 #: src/err-codes.h:213
-#, fuzzy
 msgid "Missing issuer certificate"
-msgstr "証明書がありません"
+msgstr "発行元証明書がありません"
 
 #: src/err-codes.h:214
 msgid "No keyserver available"
-msgstr ""
+msgstr "キーサーバが利用可能ではありません"
 
 #: src/err-codes.h:215
-#, fuzzy
 msgid "Invalid elliptic curve"
-msgstr "無効な時間です"
+msgstr "無効な楕円関数です"
 
 #: src/err-codes.h:216
-#, fuzzy
 msgid "Unknown elliptic curve"
-msgstr "不明なソースです"
+msgstr "不明の楕円関数です"
 
 #: src/err-codes.h:217
-#, fuzzy
 msgid "Duplicated key"
-msgstr "重複した値です"
+msgstr "重複した鍵です"
 
 #: src/err-codes.h:218
-#, fuzzy
 msgid "Ambiguous result"
-msgstr "曖昧な名前です"
+msgstr "曖昧な結果です"
 
 #: src/err-codes.h:219
-#, fuzzy
 msgid "No crypto context"
-msgstr "無効な暗号エンジンです"
+msgstr "暗号コンテクストがありません"
 
 #: src/err-codes.h:220
-#, fuzzy
 msgid "Wrong crypto context"
-msgstr "無効な暗号エンジンです"
+msgstr "誤った暗号コンテクストです"
 
 #: src/err-codes.h:221
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "Bad crypto context"
-msgstr "無効な暗号エンジンです"
+msgstr "間違ったな暗号コンテクストです"
 
 #: src/err-codes.h:222
 msgid "Conflict in the crypto context"
-msgstr ""
+msgstr "暗号コンテクストが競合しています"
 
 #: src/err-codes.h:223
-#, fuzzy
-#| msgid "No public key"
 msgid "Broken public key"
-msgstr "公開鍵がありません"
+msgstr "公開鍵が壊れています"
 
 #: src/err-codes.h:224
-#, fuzzy
-#| msgid "No secret key"
 msgid "Broken secret key"
-msgstr "秘密鍵がありません"
+msgstr "秘密鍵が壊れています"
 
 #: src/err-codes.h:225
-#, fuzzy
-#| msgid "Invalid digest algorithm"
 msgid "Invalid MAC algorithm"
-msgstr "無効な要約アルゴリズムです"
+msgstr "無効なMACアルゴリズムです"
 
 #: src/err-codes.h:226
-#, fuzzy
 msgid "Operation fully cancelled"
-msgstr "操作がキャンセルされました"
+msgstr "操作が完全にキャンセルされました"
 
 #: src/err-codes.h:227
 msgid "Operation not yet finished"
@@ -937,7 +912,7 @@ msgstr "操作がまだ終了していません"
 
 #: src/err-codes.h:228
 msgid "Buffer too short"
-msgstr "バッファに入りきりません"
+msgstr "バッファが短すぎます"
 
 #: src/err-codes.h:229
 msgid "Invalid length specifier in S-expression"
@@ -949,249 +924,366 @@ msgstr "S式の中の文字列が長すぎます"
 
 #: src/err-codes.h:231
 msgid "Unmatched parentheses in S-expression"
-msgstr "S式の中の括弧に相手がないものがあります"
+msgstr "S式の括弧が一致しません"
 
 #: src/err-codes.h:232
-#, fuzzy
 msgid "S-expression not canonical"
-msgstr "\"%expression:1\" は有効な正規表現ではありません。"
+msgstr "カノニカルなS式ではありません"
 
 #: src/err-codes.h:233
-#, fuzzy
 msgid "Bad character in S-expression"
-msgstr "表現にシンタックスエラー"
+msgstr "S式に誤ったキャラクタがあります"
 
 #: src/err-codes.h:234
-#, fuzzy
 msgid "Bad quotation in S-expression"
-msgstr "表現にシンタックスエラー"
+msgstr "S式の誤ったクオーテーションです"
 
 #: src/err-codes.h:235
-#, fuzzy
 msgid "Zero prefix in S-expression"
-msgstr "表現にシンタックスエラー"
+msgstr "S式のゼロ・プレフィックスです"
 
 #: src/err-codes.h:236
 msgid "Nested display hints in S-expression"
-msgstr ""
+msgstr "S式に表示ヒントが入れ子になっています"
 
 #: src/err-codes.h:237
-#, fuzzy
 msgid "Unmatched display hints"
-msgstr "ウィンドウマネージャのヒント"
+msgstr "表示ヒントが一致しません"
 
 #: src/err-codes.h:238
-#, fuzzy
 msgid "Unexpected reserved punctuation in S-expression"
-msgstr "条件式に構文エラー: 予期しないトークン `%s' です"
+msgstr "S式に予期しない予約された句読点があります"
 
 #: src/err-codes.h:239
 msgid "Bad hexadecimal character in S-expression"
-msgstr ""
+msgstr "S式に間違った16進キャラクタがあります"
 
 #: src/err-codes.h:240
 msgid "Odd hexadecimal numbers in S-expression"
-msgstr ""
+msgstr "S式におかしな16進キャラクタがあります"
 
 #: src/err-codes.h:241
-#, fuzzy
 msgid "Bad octal character in S-expression"
-msgstr "表現にシンタックスエラー"
+msgstr "S式に間違った8進キャラクタがあります"
 
 #: src/err-codes.h:242
-msgid "Not possible with a card based key"
+msgid "Legacy key"
 msgstr ""
 
 #: src/err-codes.h:243
 #, fuzzy
-#| msgid "Invalid object"
-msgid "Invalid lock object"
-msgstr "無効なオブジェクト"
+#| msgid "Buffer too short"
+msgid "Request too short"
+msgstr "バッファが短すぎます"
 
 #: src/err-codes.h:244
+#, fuzzy
+#| msgid "Line too long"
+msgid "Request too long"
+msgstr "行が長すぎます"
+
+#: src/err-codes.h:245
+msgid "Object is in termination state"
+msgstr ""
+
+#: src/err-codes.h:246
+msgid "No certificate chain"
+msgstr "証明書連鎖がありません"
+
+#: src/err-codes.h:247
+msgid "Certificate is too large"
+msgstr "証明書が大きすぎです"
+
+#: src/err-codes.h:248
+msgid "Invalid record"
+msgstr "無効なレコードです"
+
+#: src/err-codes.h:249
+msgid "The MAC does not verify"
+msgstr "MACが検証できません"
+
+#: src/err-codes.h:250
+msgid "Unexpected message"
+msgstr "予期しないメッセージです"
+
+#: src/err-codes.h:251
+msgid "Compression or decompression failed"
+msgstr "圧縮/伸長が失敗しました"
+
+#: src/err-codes.h:252
+msgid "A counter would wrap"
+msgstr "カウンタが一回りするかもしれません"
+
+#: src/err-codes.h:253
+msgid "Fatal alert message received"
+msgstr "致命的な警告メッセージを受信しました"
+
+#: src/err-codes.h:254
+msgid "No cipher algorithm"
+msgstr "暗号アルゴリズムがありません"
+
+#: src/err-codes.h:255
+msgid "Missing client certificate"
+msgstr "クライアント証明書がありません"
+
+#: src/err-codes.h:256
+msgid "Close notification received"
+msgstr "クローズの知らせを受信しました"
+
+#: src/err-codes.h:257
+msgid "Ticket expired"
+msgstr "チケットが期限切れです"
+
+#: src/err-codes.h:258
+msgid "Bad ticket"
+msgstr "誤ったチケットです"
+
+#: src/err-codes.h:259
+msgid "Unknown identity"
+msgstr "不明なアイデンテティです"
+
+#: src/err-codes.h:260
+msgid "Bad certificate message in handshake"
+msgstr "ハンドシェークで誤った証明書メッセージです"
+
+#: src/err-codes.h:261
+msgid "Bad certificate request message in handshake"
+msgstr "ハンドシェークで誤った証明書要求メッセージです"
+
+#: src/err-codes.h:262
+msgid "Bad certificate verify message in handshake"
+msgstr "ハンドシェークで誤った証明書検証メッセージです"
+
+#: src/err-codes.h:263
+msgid "Bad change cipher messsage in handshake"
+msgstr "ハンドシェークで誤った暗号変更メッセージです"
+
+#: src/err-codes.h:264
+msgid "Bad client hello message in handshake"
+msgstr "ハンドシェークで誤ったクライアントハローメッセージです"
+
+#: src/err-codes.h:265
+msgid "Bad server hello message in handshake"
+msgstr "ハンドシェークで誤ったサーバハローメッセージです"
+
+#: src/err-codes.h:266
+msgid "Bad server hello done message in hanshake"
+msgstr "ハンドシェークで誤ったサーバハロー了解メッセージです"
+
+#: src/err-codes.h:267
+msgid "Bad finished message in handshake"
+msgstr "ハンドシェークで誤った終了メッセージです"
+
+#: src/err-codes.h:268
+msgid "Bad server key exchange message in handshake"
+msgstr "ハンドシェークで誤ったサーバ鍵交換メッセージです"
+
+#: src/err-codes.h:269
+msgid "Bad client key exchange message in handshake"
+msgstr "ハンドシェークで誤ったクライアント鍵交換メッセージです"
+
+#: src/err-codes.h:270
+msgid "Bogus string"
+msgstr "おかしな文字列です"
+
+#: src/err-codes.h:271
+msgid "Forbidden"
+msgstr ""
+
+#: src/err-codes.h:272
+msgid "Key disabled"
+msgstr "鍵が停止されています"
+
+#: src/err-codes.h:273
+msgid "Not possible with a card based key"
+msgstr "カードの鍵では不可能です"
+
+#: src/err-codes.h:274
+msgid "Invalid lock object"
+msgstr "無効なロック・オブジェクトです"
+
+#: src/err-codes.h:275
 msgid "General IPC error"
 msgstr "一般的なIPCエラーです"
 
-#: src/err-codes.h:245
-#, fuzzy
+#: src/err-codes.h:276
 msgid "IPC accept call failed"
-msgstr "dia_plugin_init() の呼び出しに失敗しました"
+msgstr "IPC accept 呼び出しに失敗"
 
-#: src/err-codes.h:246
+#: src/err-codes.h:277
 msgid "IPC connect call failed"
-msgstr "IPCの接続コールに失敗しました"
+msgstr "IPC connect 呼び出しに失敗しました"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:278
 msgid "Invalid IPC response"
-msgstr "無効な IPC 応答"
+msgstr "無効な IPC 応答です"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:279
 msgid "Invalid value passed to IPC"
 msgstr "無効な値がIPCに渡されました"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:280
 msgid "Incomplete line passed to IPC"
 msgstr "不完全な行がIPCに渡されました"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:281
 msgid "Line passed to IPC too long"
 msgstr "IPCに渡された行が長すぎます"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:282
 msgid "Nested IPC commands"
 msgstr "IPCコマンドが入れ子になっています"
 
-#: src/err-codes.h:252
-#, fuzzy
+#: src/err-codes.h:283
 msgid "No data callback in IPC"
-msgstr "この属性には '%s' (%p) という属性、またはデータ (%p) はありません"
+msgstr "IPC でデータのコールバックがありません"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:284
 msgid "No inquire callback in IPC"
-msgstr ""
+msgstr "IPCで問い合わせコールバックがありません"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:285
 msgid "Not an IPC server"
 msgstr "IPC サーバではありません"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:286
 msgid "Not an IPC client"
 msgstr "IPC クライアントではありません"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:287
 msgid "Problem starting IPC server"
-msgstr "IPCサーバの開始時に問題が発生しました"
+msgstr "IPCサーバの開始に問題が発生しました"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:288
 msgid "IPC read error"
 msgstr "IPC 読み取りエラー"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:289
 msgid "IPC write error"
 msgstr "IPC 書き込みエラー"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:290
 msgid "Too much data for IPC layer"
-msgstr "IPC レイヤに対する多すぎるデータです"
+msgstr "IPC レイヤにデータが多すぎです"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:291
 msgid "Unexpected IPC command"
 msgstr "予期しない IPC コマンドです"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:292
 msgid "Unknown IPC command"
 msgstr "不明な IPC コマンドです"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:293
 msgid "IPC syntax error"
 msgstr "IPC 構文エラーです"
 
-#: src/err-codes.h:263
+#: src/err-codes.h:294
 msgid "IPC call has been cancelled"
 msgstr "IPC 呼び出しがキャンセルされました"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:295
 msgid "No input source for IPC"
 msgstr "IPC に対する入力ソースがありません"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:296
 msgid "No output source for IPC"
 msgstr "IPC に対する出力ソースがありません"
 
-#: src/err-codes.h:266
+#: src/err-codes.h:297
 msgid "IPC parameter error"
 msgstr "IPC パラメータエラーです"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:298
 msgid "Unknown IPC inquire"
 msgstr "不明な IPC 問い合わせです"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:299
 msgid "User defined error code 1"
 msgstr "ユーザ定義エラーコード 1"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:300
 msgid "User defined error code 2"
 msgstr "ユーザ定義エラーコード 2"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:301
 msgid "User defined error code 3"
 msgstr "ユーザ定義エラーコード 3"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:302
 msgid "User defined error code 4"
 msgstr "ユーザ定義エラーコード 4"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:303
 msgid "User defined error code 5"
 msgstr "ユーザ定義エラーコード 5"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:304
 msgid "User defined error code 6"
 msgstr "ユーザ定義エラーコード 6"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:305
 msgid "User defined error code 7"
 msgstr "ユーザ定義エラーコード 7"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:306
 msgid "User defined error code 8"
 msgstr "ユーザ定義エラーコード 8"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:307
 msgid "User defined error code 9"
 msgstr "ユーザ定義エラーコード 9"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:308
 msgid "User defined error code 10"
 msgstr "ユーザ定義エラーコード 10"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:309
 msgid "User defined error code 11"
 msgstr "ユーザ定義エラーコード 11"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:310
 msgid "User defined error code 12"
 msgstr "ユーザ定義エラーコード 12"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:311
 msgid "User defined error code 13"
 msgstr "ユーザ定義エラーコード 13"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:312
 msgid "User defined error code 14"
 msgstr "ユーザ定義エラーコード 14"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:313
 msgid "User defined error code 15"
 msgstr "ユーザ定義エラーコード 15"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:314
 msgid "User defined error code 16"
 msgstr "ユーザ定義エラーコード 16"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:315
 msgid "System error w/o errno"
 msgstr "errno が無いシステムエラー"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:316
 msgid "Unknown system error"
 msgstr "不明なシステムエラー"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:317
 msgid "End of file"
-msgstr "ファイル終端 (EOF)"
+msgstr "ファイル終端"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:318
 msgid "Unknown error code"
 msgstr "不明なエラーコード"
 
-#: src/gpg-error.c:392
+#: src/gpg-error.c:388
 #, c-format
 msgid "Usage: %s GPG-ERROR [...]\n"
 msgstr "使用法: %s GPG-ERROR [...]\n"
 
-#: src/gpg-error.c:448
+#: src/gpg-error.c:444
 #, c-format
 msgid "%s: warning: could not recognize %s\n"
 msgstr "%s: 警告: %s を認識できませんでした\n"

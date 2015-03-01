@@ -1,3 +1,379 @@
+2015-01-26  Werner Koch  <wk@gnupg.org>
+
+	Release 1.18.
+	* configure.ac: Set LT version to C14/A14/R0.
+
+	po: Update German translation.
+
+2015-01-22  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_LEGACY_KEY.
+
+2015-01-05  Werner Koch  <wk@gnupg.org>
+
+	Avoid false warning about uninitialized var.
+	* src/gpg-error.c (get_err_from_str): Init SAVED_CHAR.
+
+	build: Update to gettext 0.19.
+	* po/Makefile.in.in (MSGMERGE): Remove --previous.
+	* po/Makevars (MSGMERGE_OPTIONS): Add --previous.
+
+	build: Require automake 1.14.
+	* configure.ac (AM_INIT_AUTOMAKE): Add serial-tests.
+	* tests/Makefile.am (INCLUDES): Replace by AM_CPPFLAGS.
+
+2014-12-28  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_REQUEST_TOO_SHORT and GPG_ERR_REQUEST_TOO_LONG.
+
+2014-12-15  Werner Koch  <wk@gnupg.org>
+
+	Fix commit 754a987.
+	* Makefile.am (DISTCHECK_CONFIGURE_FLAGS): New.
+	(AUTOMAKE_OPTIONS): Move options to ...
+	* configure.ac (AM_INIT_AUTOMAKE): .. here.
+	(BUILD_DOC): Fix commit 754a987.
+
+	Add configure option --disable-doc.
+	* Makefile.am (doc) [!BUILD_DOC]: Do not recurse into doc/.
+	* configure.ac (BUILD_DOC): New am_conditional and new option.
+
+	Add GPG_ERR_OBJ_TERM_STATE.
+
+2014-12-03  Werner Koch  <wk@gnupg.org>
+
+	Add GPG_ERR_FORBIDDEN.
+
+2014-11-26  Мирослав Николић  <miroslavnikolic@rocketmail.com>
+
+	po: Add Serbian translation.
+
+2014-10-25  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub for mips64el-unknown-linux-gnuabi64.
+	* src/syscfg/lock-obj-pub.mips64el-unknown-linux-gnuabi64.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+2014-10-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	add lock-obj header for or1k-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.or1k-unknown-linux-gnu.h: new
+
+	add lock-obj for new arch triplet for x86.
+	* src/sysconfig/lock-obj-pub.i586-pc-linux-gnu.h: New.
+
+2014-10-15  Werner Koch  <wk@gnupg.org>
+
+	Release 1.17.
+	* configure.ac: Set LT version to C13/A13/R0.
+
+	doc: Add a man page for gpg-error-config.
+	* doc/gpgrt.texi: New.  Just a start for now.
+	* doc/gpl.texi, doc/lgpl.texi: New.  Take from Libgcrypt.
+	* doc/yat2m.c: New.  Take from GnuPG master.
+	* doc/Makefile.am: New.
+	* configure.ac (AC_CONFIG_FILES): Add doc/Makefile.
+	* Makefile.am (SUBDIRS): Add doc/.
+	* build-aux/mdate-sh, build-aux/texinfo.tex: New.
+
+	Fix to help building native on Windows.
+	* configure.ac (FORCE_USE_SYSCFG): New am_conditional.
+	* src/Makefile.am: Use new conditional to decide whether to build the
+	native lock object header.
+
+2014-10-03  Werner Koch  <wk@gnupg.org>
+
+	Change gpgrt_pending{,_unlocked} to macros.
+	* src/gpg-error.h.in (gpgrt_pending): Change to a macro.
+	(gpgrt_pending_unlocked): Change to a macro.
+	(_gpgrt_pending, _gpgrt_pending_unlocked): New private functions.
+	* src/visibility.c, src/visibility.h: Change accordingly.
+	* src/gpg-error.vers, src/gpg-error.def.in: Ditto.
+	* src/estream.c (_gpgrt_pending_unlocked): Rename to
+	_gpgrt__pending_unlocked.
+	(_gpgrt_pending): Rename to _gpgrt__pending.
+
+2014-10-02  Werner Koch  <wk@gnupg.org>
+
+	w32: Make it build again.
+	* src/estream.c (es_func_w32_read): Fix var name.
+
+	build: Support SYSROOT based config script finding.
+	* src/gpg-error.m4: Add support for SYSROOT and set
+	gpg_config_script_warn.  Use AC_PATH_PROG instead of AC_PATH_TOOL
+	because the config script is not expected to be installed with a
+	prefix for its name.
+
+	Add GPG_ERR_BOGUS_STRING and an experimental gpgrt_pending.
+	* src/visibility.c (gpgrt_pending, gpgrt_pending_unlocked): New.
+	* src/estream.c (_gpgrt_pending, _gpgrt_pending_unlocked): New.
+	(check_pending): new.
+	(check_pending_fbf, check_pending_nbf): New.
+	(es_func_mem_read, es_func_fd_read, es_func_w32_read)
+	(es_func_fp_read, es_fill): Take care of the special 0 value for SIZE.
+
+2014-09-29  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	GNU calls little-endian powerpc64 powerpc64le, not powerpc64el.
+	* src/Makefile.am (lock_obj_pub): fix powerpc64el to powerpc64le
+	* src/sysconfig/lock-obj-pub.powerpc64el-unknown-linux-gnu.h : move to
+	  src/sysconfig/lock-obj-pub.powerpc64le-unknown-linux-gnu.h
+
+2014-09-29  Werner Koch  <wk@gnupg.org>
+
+	Add error codes for use by a TLS library.
+
+2014-09-24  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Allow ./configure to explicitly set libgpg-error's build timestamp.
+	* configure.ac: add --enable-build-timestamp
+
+2014-09-24  Werner Koch  <wk@gnupg.org>
+
+	Add new error source GPG_ERR_SOURCE_TLS.
+
+2014-09-23  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub for sparc64-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.sparc64-unknown-linux-gnu.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+	Add new lock-obj-pub for powerpc64el-unknown-linux-gnu.
+	* src/syscfg/lock-obj-pub.powerpc64el-unknown-linux-gnu.h: New.
+	* src/Makefile.am (lock_obj_pub): Add.
+
+2014-09-18  Werner Koch  <wk@gnupg.org>
+
+	Release 1.16.
+	* configure.ac: Set LT version to C12/A12/R2.
+
+	Add new lock-obj-pub for Apple iOS.
+	* src/syscfg/lock-obj-pub.aarch64-apple-darwin.h: New.
+	* src/syscfg/lock-obj-pub.arm-apple-darwin.h: New.
+
+2014-09-12  Werner Koch  <wk@gnupg.org>
+
+	Fix es_fclose for streams opened with "samethread".
+	* src/estream.c (destroy_stream_lock): New.
+	(es_create, do_close): Use new wrapper function.
+
+	Fix a prototype.
+	* src/gpgrt-int.h: s/off_t/gpgrt_off_t/.
+
+2014-09-11  Werner Koch  <wk@gnupg.org>
+
+	Release 1.15.
+	* configure.ac: Set LT version to C12/A12/R1.
+
+	Fix build problems with non-gmake (ie. AIX).
+	* src/Makefile.am: Do not distribute gpg-error.h.
+	(lock-obj-pub.native.h): Prepend a "./" to match the dependency.
+
+	Fix problems with ssize_t and off_t.
+	* configure.ac (AC_SYS_LARGEFILE): New.
+	(AC_CHECK_HEADERS): Check for stdint.h.
+	(AC_CHECK_SIZEOF): Add for int, long and long long.
+	(REPLACEMENT_FOR_OFF_T): New ac_define.
+	* src/mkheader.c (have_stdint_h, have_w32_system, have_w64_system)
+	(replacement_for_off_type, stdint_h_included): New.
+	(xfree, xstrdup): New.
+	(parse_config_h): New.
+	(write_special): Support "define:gpgrt_off_t", "define:gpgrt_ssize_t",
+	"api_ssize_t" tags.
+	(main): Add config.h arg.  Call parse_config_h.  Fix substitute code.
+	* src/Makefile.am (gpg-error.h): Pass config.h to mkheader.
+
+	* src/gpg-error.h.in: Include definitions for gpgrt_ssize_t and
+	gpgrt_off_t.  Let mkheader insert ssize_t keywords.  Chnage all off_t
+	to gpgrt_off_t.
+	* src/estream.c: Change all off_t to gpgrt_off_t.  Chnage all ssize_t
+	to gpgrt_ssize_t.
+	* src/visibility.c (gpgrt_fseeko): Use gpgrt_off_t.
+	(gpgrt_ftello): Ditto.
+	(gpgrt_getline): Use gpgrt_ssize_t.
+	(gpgrt_read_line): Ditto.
+
+	Fix compiler warning for w32.
+	* src/syscfg/lock-obj-pub.mingw32.h (GPGRT_LOCK_INITIALIZER): Add
+	mssing braces.
+
+2014-09-08  Werner Koch  <wk@gnupg.org>
+
+	Release 1.14.
+	* configure.ac: Set LT version to C12/A12/R0.
+
+	po: Update de.po.
+
+2014-08-26  Werner Koch  <wk@gnupg.org>
+
+	Add gpgrt_set_alloc_func.
+	* src/visibility.c (gpgrt_set_alloc_func): New.
+	* configure.ac (_ESTREAM_PRINTF_REALLOC): Define.
+	(_ESTREAM_PRINTF_EXTRA_INCLUDE): Define.
+	* src/estream.c (mem_alloc, mem_realloc, mem_free): Simplify.
+	(_gpgrt_free): Remove.
+	* src/init.c (custom_realloc): New var.
+	(_gpgrt_set_alloc_func): New.
+	(_gpgrt_realloc, _gpgrt_malloc, _gpgrt_free): New.
+
+	* src/visibility.h (gpg_err_deinit): Mark as visible.
+
+	Export missing init functions.
+	* src/gpg-error.h.in (gpgrt_init): New macro.
+	(gpgrt_check_version): New prototype.
+	* src/init.c (_gpg_err_init): Rename from gpg_err_init.
+	(_gpg_err_deinit): Rename from gpg_err_deinit.
+	* src/visibility.c (gpg_err_init): New.
+	(gpg_err_deinit): New.
+	(gpgrt_check_version): New.
+	* src/gpg-error.vers (gpg_err_init, gpg_err_deinit): Add missing
+	symbols.
+	(gpgrt_check_version): New.
+	* src/gpg-error.def.in (gpg_err_init, gpg_err_deinit): Add missing
+	symbols.
+	(gpgrt_check_version): New.
+	* src/gpg-error.c (main): Use gpgrt_init macro.
+
+	Include required headers into gpg-error.h.
+	* src/gpg-error.h.in: Include stdarg.h.
+
+2014-08-25  Werner Koch  <wk@gnupg.org>
+
+	Replace locking code in estream functions.
+	* src/posix-lock.c: Add weak program for pthread_mutex_trylock.
+	(_gpgrt_lock_trylock): New.
+	* src/w32-lock.c (_gpgrt_lock_init): Add missing return statement.
+	(_gpgrt_lock_trylock): New.
+	* src/visibility.c (gpgrt_set_syscall_clamp): New.
+	(gpgrt_lock_trylock): New.
+	(gpgrt_vsnprintf): Fix symbol name.
+	* src/init.c (DllMain): Mark unused arg.
+	* src/estream.c: Replace npth mutexes by our own locks.  Replace yeild
+	macro by _gpgrt_yield.
+	(pre_syscall_func, post_syscall_func): New.
+	(do_deinit): Clear both new vars.
+	(es_func_fd_read, es_func_fd_write): Call pre and post syscall
+	functions instead of the former SYSCALL macros.
+	(es_func_w32_read, es_func_w32_write): Ditto.
+	(es_func_fd_seek, es_func_w32_seek, es_func_fp_read)
+	(es_func_fp_write, es_func_fp_seek, es_func_fp_destroy): Bracket
+	syscalls with the pre- and post-syscall fucntions.
+	(do_npth_read, do_npth_write): Remove.
+	(_gpgrt_es_init): Remove call to mutex init.  It is now statically
+	initialized.
+	(_gpgrt_set_syscall_clamp): New.
+	(es_create): Destroy stream lock on error.
+	(do_close): Destroy stream lock.
+
+	Remove GnuPG specific code.
+	* src/estream.c (es_write_sanitized_utf8_buffer): Remove.
+
+	Add test for the estream printf functions.
+	* tests/t-printf.c: New.
+	* configure.ac: Check for vasprintf.
+
+	Add gpgrt_snprintf and gpgrt_vsnprintf.
+
+	Finish inclusion of estream into the API.
+
+	Implement symbol visibility.
+	* configure.ac: New option --enable-ld-version-script.
+	(GPGRT_USE_VISIBILITY): New ac_define.
+	(HAVE_LD_VERSION_SCRIPT): New am_conditional.
+	* src/gpg-error.vers: New.
+	* src/gpgrt-int.h: New.
+	* src/visibility.c, src/visibility.h: New.  Lot of changes to symbold
+	names.
+
+	First set of changes to include estream into the API.
+	* configure.ac (AH_BOTTOM): Define GPGRT_ENABLE_ES_MACROS.
+	* src/gpg-error.h.in: include stdio.h.  Include most of the estream
+	functions and rename structures and types.
+	* src/estream.h: Rewrite. Include only gpg-error.h and local
+	prototypes.
+	* src/estream.c: Rename types and macros.
+	* src/estream-printf.c (_gpgrt_estream_snprintf): Prefix public
+	functions with _gpgrt_.
+
+	Fix some minor estream things.
+	* m4/estream.m4: Check for memrchr.
+	* src/estream.c (memrchr) [!HAVE_MEMRCHR]: New.
+	* src/init.c: Include estream.h
+	(real_init): Init estream.
+
+	Add missing redefine macros to cleanup the external symbols.
+
+	Add estream code from GnuPG.
+	* src/estream-printf.c, src/estream-printf.h: New.
+	* src/estream.c, src/estream.h: New.
+	* m4/estream.m4: New.
+	* src/Makefile.am (libgpg_error_la_SOURCES): Add new files.
+	* configure.ac (AH_BOTTOM): Define estream prefix.
+	<gcc>: Add useful gcc warning options.
+	(estream_INIT): Call.
+
+2014-08-12  Joe Hansen  <joedalton2@yahoo.dk>
+
+	Update Danish translation.
+	* po/da.po: Update.
+
+2014-08-10  Werner Koch  <wk@gnupg.org>
+
+	tests: Fix compiler warning.
+	* tests/t-lock.c: Include header vor getpid.
+	(revision_thread): Init "i" to avoid compiler warning.
+
+2014-08-06  NIIBE Yutaka  <gniibe@fsij.org>
+
+	Update ja.po.
+
+2014-08-05  Werner Koch  <wk@gnupg.org>
+
+	Use 16 byte alignment for hppa-unknown-linux-gnu.
+	* configure.ac (HAVE_GCC_ATTRIBUTE_ALIGNED): New.
+	* src/gen-posix-lock-obj.c (USE_16BYTE_ALIGNMENT): Set for HPPA-Linux.
+	(main): Enforce alignment if needed.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: Use 16 byte
+	alignment.
+
+2014-07-27  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Add new lock-obj-pub.*.h from debian buildds.
+	* src/syscfg/lock-obj-pub.aarch64-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.alpha-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.arm-unknown-linux-gnueabi.h: New.
+	* src/syscfg/lock-obj-pub.arm-unknown-linux-gnueabihf.h: New.
+	* src/syscfg/lock-obj-pub.hppa-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-kfreebsd-gnu.h: New.
+	* src/syscfg/lock-obj-pub.i486-pc-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.m68k-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.mips-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.mipsel-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.powerpc-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.powerpc64-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.s390x-ibm-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.sh4-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.sparc-unknown-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-kfreebsd-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-linux-gnu.h: New.
+	* src/syscfg/lock-obj-pub.x86_64-pc-linux-gnux32.h: New.
+	* src/Makefile.am (lock_obj_pub): Add new files.
+
+2014-06-30  Daniel Kahn Gillmor  <dkg@fifthhorseman.net>
+
+	Improve logging in a test module.
+	* tests/t-version.c (main): Print program name.
+
+2014-06-25  Werner Koch  <wk@gnupg.org>
+
+	Add missing prototype for build tool.
+	* src/gen-posix-lock-obj.c: Include string.h.
+
+2014-06-10  Werner Koch  <wk@gnupg.org>
+
+	New error code GPG_ERR_KEY_DISABLED.
+
 2014-04-15  Werner Koch  <wk@gnupg.org>
 
 	Release 1.13.

@@ -1,22 +1,22 @@
 # French translation of Libgpg-error
-# Copyright (C) 2005, 2011, 2012 Free Software Foundation, Inc.
+# Copyright (C) 2005, 2011, 2012, 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgpg-error package.
 #
 # Stephane Roy <sroy@j2n.net>, 2005.
-# David Prévot <david@tilapin.org>, 2011, 2012.
+# David Prévot <david@tilapin.org>, 2011, 2012, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: libgpg-error-1.10\n"
+"Project-Id-Version: libgpg-error-1.17\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2014-04-15 14:26+0200\n"
-"PO-Revision-Date: 2013-02-23 20:09+0100\n"
+"POT-Creation-Date: 2015-01-26 10:35+0100\n"
+"PO-Revision-Date: 2014-11-01 22:07-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/err-sources.h:28
@@ -84,26 +84,30 @@ msgid "Assuan"
 msgstr "Assuan"
 
 #: src/err-sources.h:44
+msgid "TLS"
+msgstr "TLS"
+
+#: src/err-sources.h:45
 msgid "Any source"
 msgstr "N'importe quelle source"
 
-#: src/err-sources.h:45
+#: src/err-sources.h:46
 msgid "User defined source 1"
 msgstr "Source 1 définie par l'utilisateur"
 
-#: src/err-sources.h:46
+#: src/err-sources.h:47
 msgid "User defined source 2"
 msgstr "Source 2 définie par l'utilisateur"
 
-#: src/err-sources.h:47
+#: src/err-sources.h:48
 msgid "User defined source 3"
 msgstr "Source 3 définie par l'utilisateur"
 
-#: src/err-sources.h:48
+#: src/err-sources.h:49
 msgid "User defined source 4"
 msgstr "Source 4 définie par l'utilisateur"
 
-#: src/err-sources.h:49
+#: src/err-sources.h:50
 msgid "Unknown source"
 msgstr "Source inconnue"
 
@@ -153,7 +157,7 @@ msgstr "Erreur de somme de contrôle"
 
 #: src/err-codes.h:39
 msgid "Bad passphrase"
-msgstr "Mauvaise phrase de passe"
+msgstr "Mauvaise phrase secrète"
 
 #: src/err-codes.h:40
 msgid "Invalid cipher algorithm"
@@ -420,8 +424,6 @@ msgid "No agent running"
 msgstr "Pas d'agent en cours d'exécution"
 
 #: src/err-codes.h:106
-#, fuzzy
-#| msgid "agent error"
 msgid "Agent error"
 msgstr "Erreur d'agent"
 
@@ -539,7 +541,7 @@ msgstr "Protection corrompue"
 
 #: src/err-codes.h:135
 msgid "Ambiguous name"
-msgstr "Nom ambiguë"
+msgstr "Nom ambigu"
 
 #: src/err-codes.h:136
 msgid "Card error"
@@ -819,7 +821,7 @@ msgstr "Non opérationnel"
 
 #: src/err-codes.h:205
 msgid "No passphrase given"
-msgstr "Aucune phrase de passe fournie"
+msgstr "Aucune phrase secrète fournie"
 
 #: src/err-codes.h:206
 msgid "No PIN given"
@@ -866,56 +868,40 @@ msgid "Unknown elliptic curve"
 msgstr "Courbe elliptique inconnue"
 
 #: src/err-codes.h:217
-#, fuzzy
-#| msgid "Duplicated value"
 msgid "Duplicated key"
-msgstr "Valeur dupliquée"
+msgstr "Clef dupliquée"
 
 #: src/err-codes.h:218
-#, fuzzy
-#| msgid "Ambiguous name"
 msgid "Ambiguous result"
-msgstr "Nom ambiguë"
+msgstr "Résultat ambigu"
 
 #: src/err-codes.h:219
-#, fuzzy
-#| msgid "No crypto engine"
 msgid "No crypto context"
-msgstr "Aucun moteur de chiffrement"
+msgstr "Aucun contexte de chiffrement"
 
 #: src/err-codes.h:220
-#, fuzzy
-#| msgid "No crypto engine"
 msgid "Wrong crypto context"
-msgstr "Aucun moteur de chiffrement"
+msgstr "Contexte de chiffrement incorrect"
 
 #: src/err-codes.h:221
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "Bad crypto context"
-msgstr "Moteur de chiffrement incorrect"
+msgstr "Mauvais contexte de chiffrement"
 
 #: src/err-codes.h:222
 msgid "Conflict in the crypto context"
-msgstr ""
+msgstr "Conflit dans le contexte de chiffrement"
 
 #: src/err-codes.h:223
-#, fuzzy
-#| msgid "No public key"
 msgid "Broken public key"
-msgstr "Pas de clef publique"
+msgstr "Clef publique cassée"
 
 #: src/err-codes.h:224
-#, fuzzy
-#| msgid "No secret key"
 msgid "Broken secret key"
-msgstr "Pas de clef secrète"
+msgstr "Clef secrète cassée"
 
 #: src/err-codes.h:225
-#, fuzzy
-#| msgid "Invalid digest algorithm"
 msgid "Invalid MAC algorithm"
-msgstr "Algorithme de hachage incorrect"
+msgstr "Algorithme MAC incorrect"
 
 #: src/err-codes.h:226
 msgid "Operation fully cancelled"
@@ -982,197 +968,325 @@ msgid "Bad octal character in S-expression"
 msgstr "Mauvais caractère octal dans l'expression symbolique"
 
 #: src/err-codes.h:242
-msgid "Not possible with a card based key"
+msgid "Legacy key"
 msgstr ""
 
 #: src/err-codes.h:243
 #, fuzzy
-#| msgid "Invalid object"
-msgid "Invalid lock object"
-msgstr "Objet incorrect"
+#| msgid "Buffer too short"
+msgid "Request too short"
+msgstr "Tampon trop court"
 
 #: src/err-codes.h:244
+#, fuzzy
+#| msgid "Line too long"
+msgid "Request too long"
+msgstr "Ligne trop longue"
+
+#: src/err-codes.h:245
+msgid "Object is in termination state"
+msgstr ""
+
+#: src/err-codes.h:246
+msgid "No certificate chain"
+msgstr "Aucune chaîne de certificat"
+
+#: src/err-codes.h:247
+msgid "Certificate is too large"
+msgstr "Le certificat est trop grand"
+
+#: src/err-codes.h:248
+msgid "Invalid record"
+msgstr "Enregistrement incorrect"
+
+#: src/err-codes.h:249
+msgid "The MAC does not verify"
+msgstr "Le MAC ne peut pas être vérifié"
+
+#: src/err-codes.h:250
+msgid "Unexpected message"
+msgstr "Message inattendu"
+
+#: src/err-codes.h:251
+msgid "Compression or decompression failed"
+msgstr "Échec de compression ou décompression"
+
+#: src/err-codes.h:252
+msgid "A counter would wrap"
+msgstr "Un compteur devrait envelopper"
+
+#: src/err-codes.h:253
+msgid "Fatal alert message received"
+msgstr "Message d’alerte fatale reçu"
+
+#: src/err-codes.h:254
+msgid "No cipher algorithm"
+msgstr "Aucun algorithme de chiffrement"
+
+#: src/err-codes.h:255
+msgid "Missing client certificate"
+msgstr "Certificat de client manquant"
+
+#: src/err-codes.h:256
+msgid "Close notification received"
+msgstr "Notification de fermeture reçue"
+
+#: src/err-codes.h:257
+msgid "Ticket expired"
+msgstr "Ticket expiré"
+
+#: src/err-codes.h:258
+msgid "Bad ticket"
+msgstr "Mauvais ticket"
+
+#: src/err-codes.h:259
+msgid "Unknown identity"
+msgstr "Identité inconnue"
+
+#: src/err-codes.h:260
+msgid "Bad certificate message in handshake"
+msgstr "Mauvais message de certificat dans l’initialisation"
+
+#: src/err-codes.h:261
+msgid "Bad certificate request message in handshake"
+msgstr "Mauvais message de demande de certificat dans l’initialisation"
+
+#: src/err-codes.h:262
+msgid "Bad certificate verify message in handshake"
+msgstr "Mauvais message de vérification de certificat dans l’initialisation"
+
+# NOTE: s/messsage/message/
+#: src/err-codes.h:263
+msgid "Bad change cipher messsage in handshake"
+msgstr "Mauvais message de modification d’algorithme dans l’initialisation"
+
+#: src/err-codes.h:264
+msgid "Bad client hello message in handshake"
+msgstr "Mauvais message de salut du client dans l’initialisation"
+
+#: src/err-codes.h:265
+msgid "Bad server hello message in handshake"
+msgstr "Mauvais message de salut du serveur dans l’initialisation"
+
+# NOTE: s/hanshake/handshake/
+#: src/err-codes.h:266
+msgid "Bad server hello done message in hanshake"
+msgstr "Mauvais message de fin de salut du serveur dans l’initialisation"
+
+#: src/err-codes.h:267
+msgid "Bad finished message in handshake"
+msgstr "Mauvais message fini dans l’initialisation"
+
+#: src/err-codes.h:268
+msgid "Bad server key exchange message in handshake"
+msgstr "Mauvais message d’échange de clef du serveur dans l’initialisation"
+
+#: src/err-codes.h:269
+msgid "Bad client key exchange message in handshake"
+msgstr "Mauvais message d’échange de clef du client dans l’initialisation"
+
+#: src/err-codes.h:270
+msgid "Bogus string"
+msgstr "Chaîne erronée"
+
+#: src/err-codes.h:271
+msgid "Forbidden"
+msgstr ""
+
+#: src/err-codes.h:272
+msgid "Key disabled"
+msgstr "Clef désactivée"
+
+#: src/err-codes.h:273
+msgid "Not possible with a card based key"
+msgstr "Impossible avec une clef basée sur carte"
+
+#: src/err-codes.h:274
+msgid "Invalid lock object"
+msgstr "Objet de verrouillage incorrect"
+
+#: src/err-codes.h:275
 msgid "General IPC error"
 msgstr "Erreur générale IPC"
 
-#: src/err-codes.h:245
+#: src/err-codes.h:276
 msgid "IPC accept call failed"
 msgstr "Échec de l'appel IPC accept"
 
-#: src/err-codes.h:246
+#: src/err-codes.h:277
 msgid "IPC connect call failed"
 msgstr "Échec de l'appel IPC connect"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:278
 msgid "Invalid IPC response"
 msgstr "Réponse IPC incorrecte"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:279
 msgid "Invalid value passed to IPC"
 msgstr "Valeur incorrecte passée à IPC"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:280
 msgid "Incomplete line passed to IPC"
 msgstr "Ligne incomplète transmise à IPC"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:281
 msgid "Line passed to IPC too long"
 msgstr "Ligne trop longue transmise à IPC"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:282
 msgid "Nested IPC commands"
 msgstr "Commandes IPC imbriquées"
 
-#: src/err-codes.h:252
+#: src/err-codes.h:283
 msgid "No data callback in IPC"
 msgstr "Aucune donnée de rappel dans IPC"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:284
 msgid "No inquire callback in IPC"
 msgstr "Aucune requête de rappel dans IPC"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:285
 msgid "Not an IPC server"
 msgstr "Pas un serveur IPC"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:286
 msgid "Not an IPC client"
 msgstr "Pas un client IPC"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:287
 msgid "Problem starting IPC server"
 msgstr "Problème au démarrage du serveur IPC"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:288
 msgid "IPC read error"
 msgstr "Erreur de lecture IPC"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:289
 msgid "IPC write error"
 msgstr "Erreur d'écriture IPC"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:290
 msgid "Too much data for IPC layer"
 msgstr "Trop de données pour la couche IPC"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:291
 msgid "Unexpected IPC command"
 msgstr "Commande IPC inattendue"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:292
 msgid "Unknown IPC command"
 msgstr "Commande IPC inconnue"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:293
 msgid "IPC syntax error"
 msgstr "Erreur de syntaxe IPC"
 
-#: src/err-codes.h:263
+#: src/err-codes.h:294
 msgid "IPC call has been cancelled"
 msgstr "L'appel IPC a été annulé"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:295
 msgid "No input source for IPC"
 msgstr "Aucune source d'entrée pour IPC"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:296
 msgid "No output source for IPC"
 msgstr "Aucune source de sortie pour IPC"
 
-#: src/err-codes.h:266
+#: src/err-codes.h:297
 msgid "IPC parameter error"
 msgstr "Erreur de paramètre IPC"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:298
 msgid "Unknown IPC inquire"
 msgstr "Requête IPC inconnue"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:299
 msgid "User defined error code 1"
 msgstr "Code d'erreur 1 défini par l'utilisateur"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:300
 msgid "User defined error code 2"
 msgstr "Code d'erreur 2 défini par l'utilisateur"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:301
 msgid "User defined error code 3"
 msgstr "Code d'erreur 3 défini par l'utilisateur"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:302
 msgid "User defined error code 4"
 msgstr "Code d'erreur 4 défini par l'utilisateur"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:303
 msgid "User defined error code 5"
 msgstr "Code d'erreur 5 défini par l'utilisateur"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:304
 msgid "User defined error code 6"
 msgstr "Code d'erreur 6 défini par l'utilisateur"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:305
 msgid "User defined error code 7"
 msgstr "Code d'erreur 7 défini par l'utilisateur"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:306
 msgid "User defined error code 8"
 msgstr "Code d'erreur 8 défini par l'utilisateur"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:307
 msgid "User defined error code 9"
 msgstr "Code d'erreur 9 défini par l'utilisateur"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:308
 msgid "User defined error code 10"
 msgstr "Code d'erreur 10 défini par l'utilisateur"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:309
 msgid "User defined error code 11"
 msgstr "Code d'erreur 11 défini par l'utilisateur"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:310
 msgid "User defined error code 12"
 msgstr "Code d'erreur 12 défini par l'utilisateur"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:311
 msgid "User defined error code 13"
 msgstr "Code d'erreur 13 défini par l'utilisateur"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:312
 msgid "User defined error code 14"
 msgstr "Code d'erreur 14 défini par l'utilisateur"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:313
 msgid "User defined error code 15"
 msgstr "Code d'erreur 15 défini par l'utilisateur"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:314
 msgid "User defined error code 16"
 msgstr "Code d'erreur 16 défini par l'utilisateur"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:315
 msgid "System error w/o errno"
 msgstr "Erreur système sans numéro"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:316
 msgid "Unknown system error"
 msgstr "Erreur système inconnue"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:317
 msgid "End of file"
 msgstr "Fin de fichier"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:318
 msgid "Unknown error code"
 msgstr "Code d'erreur inconnu"
 
-#: src/gpg-error.c:392
+#: src/gpg-error.c:388
 #, c-format
 msgid "Usage: %s GPG-ERROR [...]\n"
 msgstr "Utilisation : %s GPG-ERROR [...]\n"
 
-#: src/gpg-error.c:448
+#: src/gpg-error.c:444
 #, c-format
 msgid "%s: warning: could not recognize %s\n"
 msgstr "%s : attention : impossible de reconnaître %s\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error 1.7\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2014-04-15 14:26+0200\n"
+"POT-Creation-Date: 2015-01-26 10:35+0100\n"
 "PO-Revision-Date: 2013-02-23 20:22+0100\n"
 "Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -81,26 +81,30 @@ msgid "Assuan"
 msgstr "Assuan"
 
 #: src/err-sources.h:44
+msgid "TLS"
+msgstr ""
+
+#: src/err-sources.h:45
 msgid "Any source"
 msgstr "Iu ajn fonto"
 
-#: src/err-sources.h:45
+#: src/err-sources.h:46
 msgid "User defined source 1"
 msgstr "Uzant-difinita fonto 1"
 
-#: src/err-sources.h:46
+#: src/err-sources.h:47
 msgid "User defined source 2"
 msgstr "Uzant-difinita fonto 2"
 
-#: src/err-sources.h:47
+#: src/err-sources.h:48
 msgid "User defined source 3"
 msgstr "Uzant-difinita fonto 3"
 
-#: src/err-sources.h:48
+#: src/err-sources.h:49
 msgid "User defined source 4"
 msgstr "Uzant-difinita fonto 4"
 
-#: src/err-sources.h:49
+#: src/err-sources.h:50
 msgid "Unknown source"
 msgstr "Nekonata fonto"
 
@@ -999,197 +1003,349 @@ msgid "Bad octal character in S-expression"
 msgstr "Malĝusta okuma signo en S-esprimo"
 
 #: src/err-codes.h:242
-msgid "Not possible with a card based key"
+msgid "Legacy key"
 msgstr ""
 
 #: src/err-codes.h:243
+#, fuzzy
+#| msgid "Buffer too short"
+msgid "Request too short"
+msgstr "Bufro tro mallongas"
+
+#: src/err-codes.h:244
+#, fuzzy
+#| msgid "Line too long"
+msgid "Request too long"
+msgstr "Linio tro longas"
+
+#: src/err-codes.h:245
+msgid "Object is in termination state"
+msgstr ""
+
+#: src/err-codes.h:246
+#, fuzzy
+#| msgid "Bad certificate chain"
+msgid "No certificate chain"
+msgstr "Malĝusta atestila ĉeno"
+
+#: src/err-codes.h:247
+#, fuzzy
+#| msgid "Certificate too young"
+msgid "Certificate is too large"
+msgstr "Atestilo tro novas"
+
+#: src/err-codes.h:248
+#, fuzzy
+#| msgid "Invalid card"
+msgid "Invalid record"
+msgstr "Malvalida karto"
+
+#: src/err-codes.h:249
+msgid "The MAC does not verify"
+msgstr ""
+
+#: src/err-codes.h:250
+#, fuzzy
+#| msgid "Unexpected tag"
+msgid "Unexpected message"
+msgstr "Neatentida marko"
+
+#: src/err-codes.h:251
+msgid "Compression or decompression failed"
+msgstr ""
+
+#: src/err-codes.h:252
+msgid "A counter would wrap"
+msgstr ""
+
+#: src/err-codes.h:253
+msgid "Fatal alert message received"
+msgstr ""
+
+#: src/err-codes.h:254
+#, fuzzy
+#| msgid "Invalid cipher algorithm"
+msgid "No cipher algorithm"
+msgstr "Malvalida ĉifra algoritmo"
+
+#: src/err-codes.h:255
+#, fuzzy
+#| msgid "Missing certificate"
+msgid "Missing client certificate"
+msgstr "Mankas atestilo"
+
+#: src/err-codes.h:256
+#, fuzzy
+#| msgid "Certificate revoked"
+msgid "Close notification received"
+msgstr "Atestilo estas senvalidita"
+
+#: src/err-codes.h:257
+#, fuzzy
+#| msgid "Key expired"
+msgid "Ticket expired"
+msgstr "Ŝlosilo malvalidiĝis"
+
+#: src/err-codes.h:258
+#, fuzzy
+#| msgid "Bad public key"
+msgid "Bad ticket"
+msgstr "Malĝusta publika ŝlosilo"
+
+#: src/err-codes.h:259
+#, fuzzy
+#| msgid "Unknown packet"
+msgid "Unknown identity"
+msgstr "Nekonata paketo"
+
+#: src/err-codes.h:260
+#, fuzzy
+#| msgid "Bad certificate chain"
+msgid "Bad certificate message in handshake"
+msgstr "Malĝusta atestila ĉeno"
+
+#: src/err-codes.h:261
+msgid "Bad certificate request message in handshake"
+msgstr ""
+
+#: src/err-codes.h:262
+msgid "Bad certificate verify message in handshake"
+msgstr ""
+
+#: src/err-codes.h:263
+msgid "Bad change cipher messsage in handshake"
+msgstr ""
+
+#: src/err-codes.h:264
+msgid "Bad client hello message in handshake"
+msgstr ""
+
+#: src/err-codes.h:265
+msgid "Bad server hello message in handshake"
+msgstr ""
+
+#: src/err-codes.h:266
+msgid "Bad server hello done message in hanshake"
+msgstr ""
+
+#: src/err-codes.h:267
+msgid "Bad finished message in handshake"
+msgstr ""
+
+#: src/err-codes.h:268
+msgid "Bad server key exchange message in handshake"
+msgstr ""
+
+#: src/err-codes.h:269
+msgid "Bad client key exchange message in handshake"
+msgstr ""
+
+#: src/err-codes.h:270
+msgid "Bogus string"
+msgstr ""
+
+#: src/err-codes.h:271
+msgid "Forbidden"
+msgstr ""
+
+#: src/err-codes.h:272
+#, fuzzy
+#| msgid "Key expired"
+msgid "Key disabled"
+msgstr "Ŝlosilo malvalidiĝis"
+
+#: src/err-codes.h:273
+msgid "Not possible with a card based key"
+msgstr ""
+
+#: src/err-codes.h:274
 #, fuzzy
 #| msgid "Invalid object"
 msgid "Invalid lock object"
 msgstr "Malvalida objekto"
 
-#: src/err-codes.h:244
+#: src/err-codes.h:275
 msgid "General IPC error"
 msgstr "Ĝenerala eraro de IPC"
 
-#: src/err-codes.h:245
+#: src/err-codes.h:276
 msgid "IPC accept call failed"
 msgstr "Akcepta voko de IPC fiaskis"
 
-#: src/err-codes.h:246
+#: src/err-codes.h:277
 msgid "IPC connect call failed"
 msgstr "Konekta voko de IPC fiaskis"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:278
 msgid "Invalid IPC response"
 msgstr "Malvalida respondo de IPC"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:279
 msgid "Invalid value passed to IPC"
 msgstr "Malvalida valoro estis pasata al IPC"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:280
 msgid "Incomplete line passed to IPC"
 msgstr "Nekompleta linio estis pasata al IPC"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:281
 msgid "Line passed to IPC too long"
 msgstr "Pasita linio al IPC tro longas"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:282
 msgid "Nested IPC commands"
 msgstr "Nestitaj komandoj IPC"
 
-#: src/err-codes.h:252
+#: src/err-codes.h:283
 msgid "No data callback in IPC"
 msgstr "Neniu datumar funkcivoko en IPC"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:284
 msgid "No inquire callback in IPC"
 msgstr "Neniu enketa funkcivoko en IPC"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:285
 msgid "Not an IPC server"
 msgstr "Ne estas servilo IPC"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:286
 msgid "Not an IPC client"
 msgstr "Ne estas kliento IPC"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:287
 msgid "Problem starting IPC server"
 msgstr "Problemo dum ekigo de servilo IPC"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:288
 msgid "IPC read error"
 msgstr "Leg-eraro de IPC"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:289
 msgid "IPC write error"
 msgstr "Skrib-eraro de IPC"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:290
 msgid "Too much data for IPC layer"
 msgstr "Tro multa datumaro por tavolo IPC"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:291
 msgid "Unexpected IPC command"
 msgstr "Neatendita komando IPC"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:292
 msgid "Unknown IPC command"
 msgstr "Nekonata komando IPC"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:293
 msgid "IPC syntax error"
 msgstr "Sintaks-eraro de IPC"
 
-#: src/err-codes.h:263
+#: src/err-codes.h:294
 msgid "IPC call has been cancelled"
 msgstr "IPC-voko estas nuligita"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:295
 msgid "No input source for IPC"
 msgstr "Neniu enig-fonto por IPC"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:296
 msgid "No output source for IPC"
 msgstr "Neniu elig-fonto por IPC"
 
-#: src/err-codes.h:266
+#: src/err-codes.h:297
 msgid "IPC parameter error"
 msgstr "Parametra eraro de IPC"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:298
 msgid "Unknown IPC inquire"
 msgstr "Nekonata enketo de IPC"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:299
 msgid "User defined error code 1"
 msgstr "Uzant-difinita erarkodo 1"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:300
 msgid "User defined error code 2"
 msgstr "Uzant-difinita erarkodo 2"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:301
 msgid "User defined error code 3"
 msgstr "Uzant-difinita erarkodo 3"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:302
 msgid "User defined error code 4"
 msgstr "Uzant-difinita erarkodo 4"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:303
 msgid "User defined error code 5"
 msgstr "Uzant-difinita erarkodo 5"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:304
 msgid "User defined error code 6"
 msgstr "Uzant-difinita erarkodo 6"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:305
 msgid "User defined error code 7"
 msgstr "Uzant-difinita erarkodo 7"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:306
 msgid "User defined error code 8"
 msgstr "Uzant-difinita erarkodo 8"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:307
 msgid "User defined error code 9"
 msgstr "Uzant-difinita erarkodo 9"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:308
 msgid "User defined error code 10"
 msgstr "Uzant-difinita erarkodo 10"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:309
 msgid "User defined error code 11"
 msgstr "Uzant-difinita erarkodo 11"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:310
 msgid "User defined error code 12"
 msgstr "Uzant-difinita erarkodo 12"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:311
 msgid "User defined error code 13"
 msgstr "Uzant-difinita erarkodo 13"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:312
 msgid "User defined error code 14"
 msgstr "Uzant-difinita erarkodo 14"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:313
 msgid "User defined error code 15"
 msgstr "Uzant-difinita erarkodo 15"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:314
 msgid "User defined error code 16"
 msgstr "Uzant-difinita erarkodo 16"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:315
 msgid "System error w/o errno"
 msgstr "Sistem-eraro sen errno"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:316
 msgid "Unknown system error"
 msgstr "Nekonata sistem-eraro"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:317
 msgid "End of file"
 msgstr "Fino de dosiero"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:318
 msgid "Unknown error code"
 msgstr "Nekonata erar-kodo"
 
-#: src/gpg-error.c:392
+#: src/gpg-error.c:388
 #, c-format
 msgid "Usage: %s GPG-ERROR [...]\n"
 msgstr "Uzmaniero: %s GPG-ERARO [...]\n"
 
-#: src/gpg-error.c:448
+#: src/gpg-error.c:444
 #, c-format
 msgid "%s: warning: could not recognize %s\n"
 msgstr "%s: averto: ne eblis rekoni %s\n"

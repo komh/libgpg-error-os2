@@ -2,13 +2,13 @@
 # Copyright (C) 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgpg-error package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2012.
+# Yuri Chornoivan <yurchor@ukr.net>, 2012, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgpg-error 1.7\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2014-04-15 14:26+0200\n"
-"PO-Revision-Date: 2013-02-23 20:25+0100\n"
+"POT-Creation-Date: 2015-01-26 10:35+0100\n"
+"PO-Revision-Date: 2014-11-15 19:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation-team-uk@lists.sourceforge.net>\n"
 "Language: uk\n"
@@ -83,26 +83,30 @@ msgid "Assuan"
 msgstr "Assuan"
 
 #: src/err-sources.h:44
+msgid "TLS"
+msgstr "TLS"
+
+#: src/err-sources.h:45
 msgid "Any source"
 msgstr "Будь-яке джерело"
 
-#: src/err-sources.h:45
+#: src/err-sources.h:46
 msgid "User defined source 1"
 msgstr "Визначене користувачем джерело 1"
 
-#: src/err-sources.h:46
+#: src/err-sources.h:47
 msgid "User defined source 2"
 msgstr "Визначене користувачем джерело 2"
 
-#: src/err-sources.h:47
+#: src/err-sources.h:48
 msgid "User defined source 3"
 msgstr "Визначене користувачем джерело 3"
 
-#: src/err-sources.h:48
+#: src/err-sources.h:49
 msgid "User defined source 4"
 msgstr "Визначене користувачем джерело 4"
 
-#: src/err-sources.h:49
+#: src/err-sources.h:50
 msgid "Unknown source"
 msgstr "Невідоме джерело"
 
@@ -419,8 +423,6 @@ msgid "No agent running"
 msgstr "Агент не запущено"
 
 #: src/err-codes.h:106
-#, fuzzy
-#| msgid "agent error"
 msgid "Agent error"
 msgstr "Помилка агента"
 
@@ -825,118 +827,84 @@ msgid "No PIN given"
 msgstr "Не вказано пінкоду"
 
 #: src/err-codes.h:207
-#, fuzzy
-#| msgid "Not locked"
 msgid "Not enabled"
-msgstr "Не заблоковано"
+msgstr "Не увімкнено"
 
 #: src/err-codes.h:208
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "No crypto engine"
-msgstr "Некоректний рушій шифрування"
+msgstr "Немає рушія шифрування"
 
 #: src/err-codes.h:209
-#, fuzzy
-#| msgid "Missing value"
 msgid "Missing key"
-msgstr "Не вистачає значення"
+msgstr "Пропущено ключ"
 
 #: src/err-codes.h:210
-#, fuzzy
-#| msgid "No CMS object"
 msgid "Too many objects"
-msgstr "Немає об’єкта CMS"
+msgstr "Забагато об’єктів"
 
 #: src/err-codes.h:211
 msgid "Limit reached"
-msgstr ""
+msgstr "Досягнуто обмеження"
 
 #: src/err-codes.h:212
-#, fuzzy
-#| msgid "Card not initialized"
 msgid "Not initialized"
-msgstr "Картку не ініціалізовано"
+msgstr "Не ініціалізовано"
 
 #: src/err-codes.h:213
-#, fuzzy
-#| msgid "Missing certificate"
 msgid "Missing issuer certificate"
-msgstr "Не вистачає сертифіката"
+msgstr "Не вистачає сертифіката видавця"
 
 #: src/err-codes.h:214
 msgid "No keyserver available"
-msgstr ""
+msgstr "Немає доступних серверів ключів"
 
 #: src/err-codes.h:215
-#, fuzzy
-#| msgid "Invalid time"
 msgid "Invalid elliptic curve"
-msgstr "Некоректний час"
+msgstr "Некоректна еліптична крива"
 
 #: src/err-codes.h:216
-#, fuzzy
-#| msgid "Unknown source"
 msgid "Unknown elliptic curve"
-msgstr "Невідоме джерело"
+msgstr "Невідома еліптична крива"
 
 #: src/err-codes.h:217
-#, fuzzy
-#| msgid "Duplicated value"
 msgid "Duplicated key"
-msgstr "Дублювання значення"
+msgstr "Дублювання ключа"
 
 #: src/err-codes.h:218
-#, fuzzy
-#| msgid "Ambiguous name"
 msgid "Ambiguous result"
-msgstr "Неоднозначна назва"
+msgstr "Неоднозначний результат"
 
 #: src/err-codes.h:219
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "No crypto context"
-msgstr "Некоректний рушій шифрування"
+msgstr "Немає контексту шифрування"
 
 #: src/err-codes.h:220
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "Wrong crypto context"
-msgstr "Некоректний рушій шифрування"
+msgstr "Помилковий контекст шифрування"
 
 #: src/err-codes.h:221
-#, fuzzy
-#| msgid "Invalid crypto engine"
 msgid "Bad crypto context"
-msgstr "Некоректний рушій шифрування"
+msgstr "Некоректний контекст шифрування"
 
 #: src/err-codes.h:222
 msgid "Conflict in the crypto context"
-msgstr ""
+msgstr "Конфлікт у контексті шифрування"
 
 #: src/err-codes.h:223
-#, fuzzy
-#| msgid "No public key"
 msgid "Broken public key"
-msgstr "Немає відкритого ключа"
+msgstr "Пошкоджений відкритий ключ"
 
 #: src/err-codes.h:224
-#, fuzzy
-#| msgid "No secret key"
 msgid "Broken secret key"
-msgstr "Немає закритого ключа"
+msgstr "Пошкоджений закритий ключ"
 
 #: src/err-codes.h:225
-#, fuzzy
-#| msgid "Invalid digest algorithm"
 msgid "Invalid MAC algorithm"
-msgstr "Некоректний алгоритм контрольної суми"
+msgstr "Некоректний алгоритм MAC"
 
 #: src/err-codes.h:226
-#, fuzzy
-#| msgid "Operation cancelled"
 msgid "Operation fully cancelled"
-msgstr "Дію скасовано"
+msgstr "Дію повністю скасовано"
 
 #: src/err-codes.h:227
 msgid "Operation not yet finished"
@@ -995,203 +963,336 @@ msgid "Odd hexadecimal numbers in S-expression"
 msgstr "Дивні шістнадцяткові числа у S-виразі"
 
 #: src/err-codes.h:241
-#, fuzzy
-#| msgid "Bad octadecimal character in S-expression"
 msgid "Bad octal character in S-expression"
 msgstr "Помилковий вісімковий символ у S-виразі"
 
 #: src/err-codes.h:242
-msgid "Not possible with a card based key"
+msgid "Legacy key"
 msgstr ""
 
 #: src/err-codes.h:243
 #, fuzzy
-#| msgid "Invalid object"
-msgid "Invalid lock object"
-msgstr "Некоректний об’єкт"
+#| msgid "Buffer too short"
+msgid "Request too short"
+msgstr "Занадто короткий буфер"
 
 #: src/err-codes.h:244
+#, fuzzy
+#| msgid "Line too long"
+msgid "Request too long"
+msgstr "Рядок надто довгий"
+
+#: src/err-codes.h:245
+msgid "Object is in termination state"
+msgstr ""
+
+#: src/err-codes.h:246
+msgid "No certificate chain"
+msgstr "Немає ланцюжка сертифікації"
+
+#: src/err-codes.h:247
+msgid "Certificate is too large"
+msgstr "Сертифікат є надто великим"
+
+#: src/err-codes.h:248
+msgid "Invalid record"
+msgstr "Некоректний запис"
+
+#: src/err-codes.h:249
+msgid "The MAC does not verify"
+msgstr "MAC не пройшов перевірку"
+
+#: src/err-codes.h:250
+msgid "Unexpected message"
+msgstr "Неочікуване повідомлення"
+
+#: src/err-codes.h:251
+msgid "Compression or decompression failed"
+msgstr "Помилка під час стискання або видобування"
+
+#: src/err-codes.h:252
+msgid "A counter would wrap"
+msgstr "Відлік буде автоматично розпочато з початку"
+
+#: src/err-codes.h:253
+msgid "Fatal alert message received"
+msgstr "Отримано критичне попереджувальне повідомлення"
+
+#: src/err-codes.h:254
+msgid "No cipher algorithm"
+msgstr "Немає алгоритму шифрування"
+
+#: src/err-codes.h:255
+msgid "Missing client certificate"
+msgstr "Не вистачає сертифіката клієнта"
+
+#: src/err-codes.h:256
+msgid "Close notification received"
+msgstr "Отримано сповіщення щодо закриття"
+
+#: src/err-codes.h:257
+msgid "Ticket expired"
+msgstr "Строк дії квитка вичерпано"
+
+#: src/err-codes.h:258
+msgid "Bad ticket"
+msgstr "Помилковий квиток"
+
+#: src/err-codes.h:259
+msgid "Unknown identity"
+msgstr "Невідомий профіль"
+
+#: src/err-codes.h:260
+msgid "Bad certificate message in handshake"
+msgstr "Помилкове повідомлення щодо сертифікації під час підтвердження зв’язку"
+
+#: src/err-codes.h:261
+msgid "Bad certificate request message in handshake"
+msgstr ""
+"Помилкове повідомлення щодо запиту сертифікації під час підтвердження зв’язку"
+
+#: src/err-codes.h:262
+msgid "Bad certificate verify message in handshake"
+msgstr ""
+"Помилкове повідомлення щодо перевірки сертифікації під час підтвердження "
+"зв’язку"
+
+#: src/err-codes.h:263
+msgid "Bad change cipher messsage in handshake"
+msgstr "Помилкове повідомлення щодо зміни шифру під час підтвердження зв’язку"
+
+#: src/err-codes.h:264
+msgid "Bad client hello message in handshake"
+msgstr "Помилкове вітальне повідомлення клієнта під час підтвердження зв’язку"
+
+#: src/err-codes.h:265
+msgid "Bad server hello message in handshake"
+msgstr "Помилкове вітальне повідомлення сервера під час підтвердження зв’язку"
+
+#: src/err-codes.h:266
+msgid "Bad server hello done message in hanshake"
+msgstr ""
+"Помилкове повідомлення про завершення вітання від сервера під час "
+"підтвердження зв’язку"
+
+#: src/err-codes.h:267
+msgid "Bad finished message in handshake"
+msgstr "Помилкове завершальне повідомлення під час підтвердження зв’язку"
+
+#: src/err-codes.h:268
+msgid "Bad server key exchange message in handshake"
+msgstr ""
+"Помилкове повідомлення щодо обміну ключами із сервером під час підтвердження "
+"зв’язку"
+
+#: src/err-codes.h:269
+msgid "Bad client key exchange message in handshake"
+msgstr ""
+"Помилкове повідомлення щодо обміну ключами із клієнтом під час підтвердження "
+"зв’язку"
+
+#: src/err-codes.h:270
+msgid "Bogus string"
+msgstr "Фіктивний рядок"
+
+#: src/err-codes.h:271
+msgid "Forbidden"
+msgstr ""
+
+#: src/err-codes.h:272
+msgid "Key disabled"
+msgstr "Ключ вимкнено"
+
+#: src/err-codes.h:273
+msgid "Not possible with a card based key"
+msgstr "Неможливе для ключа, заснованого на картці"
+
+#: src/err-codes.h:274
+msgid "Invalid lock object"
+msgstr "Некоректний об’єкт блокування"
+
+#: src/err-codes.h:275
 msgid "General IPC error"
 msgstr "Загальна помилка IPC"
 
-#: src/err-codes.h:245
+#: src/err-codes.h:276
 msgid "IPC accept call failed"
 msgstr "Помилка виклику прийняття IPC"
 
-#: src/err-codes.h:246
+#: src/err-codes.h:277
 msgid "IPC connect call failed"
 msgstr "Помилка з’єднувального виклику IPC"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:278
 msgid "Invalid IPC response"
 msgstr "Некоректна відповідь IPC"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:279
 msgid "Invalid value passed to IPC"
 msgstr "IPC передано некоректне значення"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:280
 msgid "Incomplete line passed to IPC"
 msgstr "IPC передано незавершений рядок"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:281
 msgid "Line passed to IPC too long"
 msgstr "Рядок, переданий IPC, є надто довгим"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:282
 msgid "Nested IPC commands"
 msgstr "Вкладені команди IPC"
 
-#: src/err-codes.h:252
+#: src/err-codes.h:283
 msgid "No data callback in IPC"
 msgstr "Немає зворотного виклику щодо даних у IPC"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:284
 msgid "No inquire callback in IPC"
 msgstr "Немає інформаційного зворотного виклику у IPC"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:285
 msgid "Not an IPC server"
 msgstr "Не є сервером IPC"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:286
 msgid "Not an IPC client"
 msgstr "Не є клієнтом IPC"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:287
 msgid "Problem starting IPC server"
 msgstr "Проблеми із запуском сервера IPC"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:288
 msgid "IPC read error"
 msgstr "Помилка читання IPC"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:289
 msgid "IPC write error"
 msgstr "Помилка запису IPC"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:290
 msgid "Too much data for IPC layer"
 msgstr "Забагато даних для шару IPC"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:291
 msgid "Unexpected IPC command"
 msgstr "Неочікувана команда IPC"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:292
 msgid "Unknown IPC command"
 msgstr "Невідома команда IPC"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:293
 msgid "IPC syntax error"
 msgstr "Синтаксична помилка IPC"
 
-#: src/err-codes.h:263
+#: src/err-codes.h:294
 msgid "IPC call has been cancelled"
 msgstr "Виклик IPC було скасовано"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:295
 msgid "No input source for IPC"
 msgstr "Немає джерела вхідних даних для IPC"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:296
 msgid "No output source for IPC"
 msgstr "Немає місця виведення даних для IPC"
 
-#: src/err-codes.h:266
+#: src/err-codes.h:297
 msgid "IPC parameter error"
 msgstr "Помилка у параметрі IPC"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:298
 msgid "Unknown IPC inquire"
 msgstr "Невідомий запит IPC"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:299
 msgid "User defined error code 1"
 msgstr "Визначений користувачем код помилки 1"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:300
 msgid "User defined error code 2"
 msgstr "Визначений користувачем код помилки 2"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:301
 msgid "User defined error code 3"
 msgstr "Визначений користувачем код помилки 3"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:302
 msgid "User defined error code 4"
 msgstr "Визначений користувачем код помилки 4"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:303
 msgid "User defined error code 5"
 msgstr "Визначений користувачем код помилки 5"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:304
 msgid "User defined error code 6"
 msgstr "Визначений користувачем код помилки 6"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:305
 msgid "User defined error code 7"
 msgstr "Визначений користувачем код помилки 7"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:306
 msgid "User defined error code 8"
 msgstr "Визначений користувачем код помилки 8"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:307
 msgid "User defined error code 9"
 msgstr "Визначений користувачем код помилки 9"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:308
 msgid "User defined error code 10"
 msgstr "Визначений користувачем код помилки 10"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:309
 msgid "User defined error code 11"
 msgstr "Визначений користувачем код помилки 11"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:310
 msgid "User defined error code 12"
 msgstr "Визначений користувачем код помилки 12"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:311
 msgid "User defined error code 13"
 msgstr "Визначений користувачем код помилки 13"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:312
 msgid "User defined error code 14"
 msgstr "Визначений користувачем код помилки 14"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:313
 msgid "User defined error code 15"
 msgstr "Визначений користувачем код помилки 15"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:314
 msgid "User defined error code 16"
 msgstr "Визначений користувачем код помилки 16"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:315
 msgid "System error w/o errno"
 msgstr "Системна помилка без номера"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:316
 msgid "Unknown system error"
 msgstr "Невідома системна помилка"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:317
 msgid "End of file"
 msgstr "Кінець файла"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:318
 msgid "Unknown error code"
 msgstr "Помилка з невідомим кодом"
 
-#: src/gpg-error.c:392
+#: src/gpg-error.c:388
 #, c-format
 msgid "Usage: %s GPG-ERROR [...]\n"
 msgstr "Користування: %s ПОМИЛКА-GPG [...]\n"
 
-#: src/gpg-error.c:448
+#: src/gpg-error.c:444
 #, c-format
 msgid "%s: warning: could not recognize %s\n"
 msgstr "%s: попередження: не вдалося розпізнати %s\n"
