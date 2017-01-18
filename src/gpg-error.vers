@@ -14,7 +14,7 @@
 # GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public
-# License along with this program; if not, see <http://www.gnu.org/licenses/>.
+# License along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 # NOTE: When adding new functions, please make sure to add them to
 #       visibility.h and gpg-error.def.in as well.
@@ -39,6 +39,7 @@ GPG_ERROR_1.0 {
     gpgrt_lock_trylock;
 
     gpgrt_set_syscall_clamp;
+    gpgrt_get_syscall_clamp;
 
     gpgrt_fopen;
     gpgrt_mopen;
@@ -104,6 +105,9 @@ GPG_ERROR_1.0 {
     gpgrt_setvbuf;
     gpgrt_setbuf;
     gpgrt_set_binary;
+    gpgrt_set_nonblock;
+    gpgrt_get_nonblock;
+    gpgrt_poll;
     gpgrt_tmpfile;
     gpgrt_opaque_set;
     gpgrt_opaque_get;

@@ -1,5 +1,5 @@
 # configure.ac for libgpg-error
-# Copyright (C) 2003, 2004, 2006, 2010, 2013, 2014, 2015 g10 Code GmbH
+# Copyright (C) 2003, 2004, 2006, 2010, 2013, 2014, 2015, 2016 g10 Code GmbH
 #
 # This file is part of libgpg-error.
 #
@@ -14,7 +14,7 @@
 # GNU Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program; if not, see <http://www.gnu.org/licenses/>.
+# along with this program; if not, see <https://www.gnu.org/licenses/>.
 
 # (Process this file with autoconf to produce a configure script.)
 # The following lines are used by ./autogen.sh.
@@ -27,7 +27,7 @@ min_automake_version="1.14"
 # another commit, and a push so that the git magic is able to work.
 # See below for the LT versions.
 m4_define([mym4_version_major], [1])
-m4_define([mym4_version_minor], [18])
+m4_define([mym4_version_minor], [26])
 
 # Below is m4 magic to extract and compute the revision number, the
 # decimalized short revision number, a beta version string, and a flag
@@ -44,15 +44,15 @@ m4_define([mym4_betastring],
 m4_define([mym4_isgit],m4_if(mym4_betastring,[],[no],[yes]))
 m4_define([mym4_full_version],[mym4_version[]mym4_betastring])
 
-AC_INIT([libgpg-error],[mym4_full_version],[http://bugs.gnupg.org])
+AC_INIT([libgpg-error],[mym4_full_version],[https://bugs.gnupg.org])
 # LT Version numbers, remember to change them just *before* a release.
 #   (Code changed:			REVISION++)
 #   (Interfaces added/removed/changed:	CURRENT++, REVISION=0)
 #   (Interfaces added:			AGE++)
 #   (Interfaces removed:		AGE=0)
 # Note that added error codes don't constitute an interface change.
-LIBGPG_ERROR_LT_CURRENT=14
-LIBGPG_ERROR_LT_AGE=14
+LIBGPG_ERROR_LT_CURRENT=21
+LIBGPG_ERROR_LT_AGE=21
 LIBGPG_ERROR_LT_REVISION=0
 ################################################
 
@@ -160,7 +160,7 @@ AM_GNU_GETTEXT([external])
 
 # Checks for header files.
 AC_HEADER_STDC
-AC_CHECK_HEADERS([stdlib.h locale.h stdint.h])
+AC_CHECK_HEADERS([stdlib.h locale.h stdint.h sys/select.h sys/time.h])
 AC_FUNC_STRERROR_R
 case "${host_os}" in
      solaris*)
@@ -184,6 +184,20 @@ AC_C_CONST
 AC_CHECK_SIZEOF(int)
 AC_CHECK_SIZEOF(long)
 AC_CHECK_SIZEOF(long long)
+AC_HEADER_TIME
+AC_CHECK_SIZEOF(time_t,,[[
+#include <stdio.h>
+#if TIME_WITH_SYS_TIME
+# include <sys/time.h>
+# include <time.h>
+#else
+# if HAVE_SYS_TIME_H
+#  include <sys/time.h>
+# else
+#  include <time.h>
+# endif
+#endif
+]])
 
 # Find a 64 bit integer type to be used instead of off_t.  We prefer
 # the standard integer types over int64_t and finally try long long.
@@ -416,6 +430,20 @@ else
   fi
 fi
 
+# Default value for GPG_ERROR_CONFIG_LIBS
+config_libs="-lgpg-error"
+
+#
+# Check for other libraries (now only for -lrt).
+#
+LIB_SCHED_YIELD=
+AC_SUBST([LIB_SCHED_YIELD])
+AC_SEARCH_LIBS([sched_yield], [rt posix4],
+               [if test "$ac_cv_search_sched_yield" != "none required"; then
+                  LIB_SCHED_YIELD=$ac_cv_search_sched_yield
+                  config_libs="$config_libs $LIB_SCHED_YIELD"
+                fi])
+
 #
 # Prepare building of estream
 #
@@ -424,7 +452,7 @@ estream_INIT
 #
 # Substitution used for gpg-error-config
 #
-GPG_ERROR_CONFIG_LIBS="-lgpg-error"
+GPG_ERROR_CONFIG_LIBS="$config_libs"
 if test "x$LIBTHREAD" != x; then
   GPG_ERROR_CONFIG_LIBS="${GPG_ERROR_CONFIG_LIBS} ${LIBTHREAD}"
 fi
@@ -486,22 +514,23 @@ AC_DEFINE_UNQUOTED(BUILD_REVISION, "$BUILD_REVISION",
                    [GIT commit id revision used to build this package])
 
 changequote(,)dnl
-BUILD_FILEVERSION=`echo "$PACKAGE_VERSION"|sed 's/\([0-9.]*\).*/\1./;s/\./,/g'`
+BUILD_VERSION=`echo "$PACKAGE_VERSION"|sed 's/\([0-9.]*\).*/\1./'`
 changequote([,])dnl
-BUILD_FILEVERSION="${BUILD_FILEVERSION}0,mym4_revision_dec"
+BUILD_VERSION="${BUILD_VERSION}0.mym4_revision_dec"
+BUILD_FILEVERSION=`echo "${BUILD_VERSION}" | tr . ,`
+AC_SUBST(BUILD_VERSION)
 AC_SUBST(BUILD_FILEVERSION)
 
-
 AC_ARG_ENABLE([build-timestamp],
-              AC_HELP_STRING([--enable-build-timestamp],
-                [set an explicit build timestamp for reproducibility.
-                 (default is the current time in ISO-8601 format)]),
-                [if test "$enableval" = "no"; then
-                    BUILD_TIMESTAMP="<none>"
-                 else
-                    BUILD_TIMESTAMP="$enableval"
-                 fi],
-        [BUILD_TIMESTAMP=`date -u +%Y-%m-%dT%H:%M+0000 2>/dev/null || date`])
+  AC_HELP_STRING([--enable-build-timestamp],
+                 [set an explicit build timestamp for reproducibility.
+                  (default is the current time in ISO-8601 format)]),
+     [if test "$enableval" = "yes"; then
+        BUILD_TIMESTAMP=`date -u +%Y-%m-%dT%H:%M+0000 2>/dev/null || date`
+      else
+        BUILD_TIMESTAMP="$enableval"
+      fi],
+     [BUILD_TIMESTAMP="<none>"])
 AC_SUBST(BUILD_TIMESTAMP)
 AC_DEFINE_UNQUOTED(BUILD_TIMESTAMP, "$BUILD_TIMESTAMP",
                    [The time this package was configured for a build])
@@ -518,6 +547,11 @@ AC_ARG_ENABLE([doc], AC_HELP_STRING([--disable-doc],
                      build_doc=$enableval, build_doc=yes)
 AM_CONDITIONAL([BUILD_DOC], [test "x$build_doc" != xno])
 
+build_tests=yes
+AC_ARG_ENABLE([tests], AC_HELP_STRING([--disable-tests],
+                                    [do not build the tests]),
+                     build_tests=$enableval, build_tests=yes)
+AM_CONDITIONAL([BUILD_TESTS], [test "x$build_tests" != xno])
 
 #
 # Substitution
@@ -526,16 +560,22 @@ AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([doc/Makefile po/Makefile.in m4/Makefile])
 AC_CONFIG_FILES([src/Makefile tests/Makefile])
 AC_CONFIG_FILES([lang/Makefile lang/cl/Makefile lang/cl/gpg-error.asd])
-AC_CONFIG_FILES([src/versioninfo.rc])
+AC_CONFIG_FILES([src/versioninfo.rc src/gpg-error.w32-manifest])
 AC_CONFIG_FILES([src/gpg-error-config], [chmod +x src/gpg-error-config])
 
 AC_OUTPUT
 
+tmp=
+if test "$have_w32_system" != yes; then
+   if test x"$gl_use_threads" = xno; then
+     tmp=" NO-THREADS"
+   fi
+fi
 echo "
         $PACKAGE_NAME-$PACKAGE_VERSION prepared for make
 
         Revision: mym4_revision  (mym4_revision_dec)
-        Platform: $host
+        Platform: $host$tmp
 "
 if test "$gcry_cv_gcc_attribute_aligned" != "yes" ; then
 cat <<G10EOF

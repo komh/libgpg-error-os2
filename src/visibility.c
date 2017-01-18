@@ -14,7 +14,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <config.h>
@@ -94,6 +94,12 @@ void
 gpgrt_set_syscall_clamp (void (*pre)(void), void (*post)(void))
 {
   _gpgrt_set_syscall_clamp (pre, post);
+}
+
+void
+gpgrt_get_syscall_clamp (void (**r_pre)(void), void (**r_post)(void))
+{
+  _gpgrt_get_syscall_clamp (r_pre, r_post);
 }
 
 void
@@ -590,6 +596,24 @@ void
 gpgrt_set_binary (estream_t stream)
 {
   _gpgrt_set_binary (stream);
+}
+
+int
+gpgrt_set_nonblock (estream_t stream, int onoff)
+{
+  return _gpgrt_set_nonblock (stream, onoff);
+}
+
+int
+gpgrt_get_nonblock (estream_t stream)
+{
+  return _gpgrt_get_nonblock (stream);
+}
+
+int
+gpgrt_poll (gpgrt_poll_t *fds, unsigned int nfds, int timeout)
+{
+  return _gpgrt_poll (fds, nfds, timeout);
 }
 
 estream_t

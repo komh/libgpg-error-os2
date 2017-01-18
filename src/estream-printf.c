@@ -14,7 +14,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with Libestream; if not, see <http://www.gnu.org/licenses/>.
+ * License along with Libestream; if not, see <https://www.gnu.org/licenses/>.
  *
  * ALTERNATIVELY, Libestream may be distributed under the terms of the
  * following license, in which case the provisions of this license are
@@ -1784,7 +1784,7 @@ dynamic_buffer_out (void *outfncarg, const char *buf, size_t buflen)
         {
           parm->error_flag = errno ? errno : ENOMEM;
           /* Wipe out what we already accumulated.  This is useful in
-             case sensitive data is formated.  */
+             case sensitive data is formatted.  */
           memset (parm->buffer, 0, parm->used);
           return -1;
         }

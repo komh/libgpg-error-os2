@@ -1,14 +1,14 @@
 # Polish translation for libgpg-error.
 # Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the libgpg-error package.
-# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2014.
+# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libgpg-error 1.17\n"
+"Project-Id-Version: libgpg-error 1.22\n"
 "Report-Msgid-Bugs-To: translations@gnupg.org\n"
-"POT-Creation-Date: 2015-01-26 10:35+0100\n"
-"PO-Revision-Date: 2014-10-16 21:15+0200\n"
+"POT-Creation-Date: 2016-12-21 13:55+0100\n"
+"PO-Revision-Date: 2016-05-11 18:02+0200\n"
 "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "Language: pl\n"
@@ -161,7 +161,7 @@ msgid "Invalid cipher algorithm"
 msgstr "Niepoprawny algorytm szyfru"
 
 #: src/err-codes.h:41
-msgid "Keyring open"
+msgid "Cannot open keyring"
 msgstr "Zbiór kluczy otwarty"
 
 #: src/err-codes.h:42
@@ -965,323 +965,787 @@ msgid "Bad octal character in S-expression"
 msgstr "Błędny znak ósemkowy w S-wyrażeniu"
 
 #: src/err-codes.h:242
-msgid "Legacy key"
+msgid "All subkeys are expired or revoked"
 msgstr ""
 
 #: src/err-codes.h:243
-#, fuzzy
-#| msgid "Buffer too short"
-msgid "Request too short"
-msgstr "Bufor zbyt mały"
+msgid "Database is corrupted"
+msgstr "Baza danych jest uszkodzona"
 
 #: src/err-codes.h:244
-#, fuzzy
-#| msgid "Line too long"
-msgid "Request too long"
-msgstr "Linia zbyt długa"
+msgid "Server indicated a failure"
+msgstr "Serwer wskazał niepowodzenie"
 
 #: src/err-codes.h:245
-msgid "Object is in termination state"
-msgstr ""
+msgid "No name"
+msgstr "Brak nazwy"
 
 #: src/err-codes.h:246
+msgid "No key"
+msgstr "Brak klucza"
+
+#: src/err-codes.h:247
+msgid "Legacy key"
+msgstr "Stary typ klucza"
+
+#: src/err-codes.h:248
+msgid "Request too short"
+msgstr "Żądanie za krótkie"
+
+#: src/err-codes.h:249
+msgid "Request too long"
+msgstr "Żądanie za długie"
+
+#: src/err-codes.h:250
+msgid "Object is in termination state"
+msgstr "Obiekt jest w stanie końcowym"
+
+#: src/err-codes.h:251
 msgid "No certificate chain"
 msgstr "Brak łańcucha certyfikatów"
 
-#: src/err-codes.h:247
+#: src/err-codes.h:252
 msgid "Certificate is too large"
 msgstr "Certyfikat jest zbyt duży"
 
-#: src/err-codes.h:248
+#: src/err-codes.h:253
 msgid "Invalid record"
 msgstr "Niepoprawny rekord"
 
-#: src/err-codes.h:249
+#: src/err-codes.h:254
 msgid "The MAC does not verify"
 msgstr "Niepomyślna weryfikacja MAC"
 
-#: src/err-codes.h:250
+#: src/err-codes.h:255
 msgid "Unexpected message"
 msgstr "Nieoczekiwany komunikat"
 
-#: src/err-codes.h:251
+#: src/err-codes.h:256
 msgid "Compression or decompression failed"
 msgstr "Kompresja lub dekompresja nie powiodła się"
 
-#: src/err-codes.h:252
+#: src/err-codes.h:257
 msgid "A counter would wrap"
 msgstr "Licznik by się przekręcił"
 
-#: src/err-codes.h:253
+#: src/err-codes.h:258
 msgid "Fatal alert message received"
 msgstr "Otrzymano komunikat alarmu krytycznego"
 
-#: src/err-codes.h:254
+#: src/err-codes.h:259
 msgid "No cipher algorithm"
 msgstr "Brak algorytmu szyfru"
 
-#: src/err-codes.h:255
+#: src/err-codes.h:260
 msgid "Missing client certificate"
 msgstr "Brak certyfikatu klienta"
 
-#: src/err-codes.h:256
+#: src/err-codes.h:261
 msgid "Close notification received"
 msgstr "Otrzymano powiadomienie o zamknięciu"
 
-#: src/err-codes.h:257
+#: src/err-codes.h:262
 msgid "Ticket expired"
 msgstr "Bilet wygasł"
 
-#: src/err-codes.h:258
+#: src/err-codes.h:263
 msgid "Bad ticket"
 msgstr "Błędny bilet"
 
-#: src/err-codes.h:259
+#: src/err-codes.h:264
 msgid "Unknown identity"
 msgstr "Nieznana tożsamość"
 
-#: src/err-codes.h:260
+#: src/err-codes.h:265
 msgid "Bad certificate message in handshake"
 msgstr "Błędny komunikat certyfikatu przy powitaniu"
 
-#: src/err-codes.h:261
+#: src/err-codes.h:266
 msgid "Bad certificate request message in handshake"
 msgstr "Błędny komunikat żądania certyfikatu przy powitaniu"
 
-#: src/err-codes.h:262
+#: src/err-codes.h:267
 msgid "Bad certificate verify message in handshake"
 msgstr "Błędny komunikat weryfikacji certyfikatu przy powitaniu"
 
-#: src/err-codes.h:263
-msgid "Bad change cipher messsage in handshake"
+#: src/err-codes.h:268
+msgid "Bad change cipher message in handshake"
 msgstr "Błędny komunikat zmiany szyfru przy powitaniu"
 
-#: src/err-codes.h:264
+#: src/err-codes.h:269
 msgid "Bad client hello message in handshake"
 msgstr "Błędny komunikat przywitania klienta w powitaniu"
 
-#: src/err-codes.h:265
+#: src/err-codes.h:270
 msgid "Bad server hello message in handshake"
 msgstr "Błędny komunikat przywitania serwera w powitaniu"
 
-#: src/err-codes.h:266
-msgid "Bad server hello done message in hanshake"
+#: src/err-codes.h:271
+msgid "Bad server hello done message in handshake"
 msgstr "Błędny komunikat zakończenia przywitania serwera w powitaniu"
 
-#: src/err-codes.h:267
+#: src/err-codes.h:272
 msgid "Bad finished message in handshake"
 msgstr "Błędny komunikat zakończenia w powitaniu"
 
-#: src/err-codes.h:268
+#: src/err-codes.h:273
 msgid "Bad server key exchange message in handshake"
 msgstr "Błędny komunikat wymiany klucza serwera w powitaniu"
 
-#: src/err-codes.h:269
+#: src/err-codes.h:274
 msgid "Bad client key exchange message in handshake"
 msgstr "Błędny komunikat wymiany klucza klienta w powitaniu"
 
-#: src/err-codes.h:270
+#: src/err-codes.h:275
 msgid "Bogus string"
 msgstr "Fałszywy łańcuch"
 
-#: src/err-codes.h:271
+#: src/err-codes.h:276
 msgid "Forbidden"
-msgstr ""
+msgstr "Zabronione"
 
-#: src/err-codes.h:272
+#: src/err-codes.h:277
 msgid "Key disabled"
 msgstr "Klucz dezaktywowany"
 
-#: src/err-codes.h:273
+#: src/err-codes.h:278
 msgid "Not possible with a card based key"
 msgstr "Niemożliwe przy użyciu klucza opartego na karcie"
 
-#: src/err-codes.h:274
+#: src/err-codes.h:279
 msgid "Invalid lock object"
 msgstr "Niepoprawny obiekt blokady"
 
-#: src/err-codes.h:275
+#: src/err-codes.h:280
+msgid "True"
+msgstr "Prawda"
+
+#: src/err-codes.h:281
+msgid "False"
+msgstr "Fałsz"
+
+#: src/err-codes.h:282
 msgid "General IPC error"
 msgstr "Błąd ogólny IPC"
 
-#: src/err-codes.h:276
+#: src/err-codes.h:283
 msgid "IPC accept call failed"
 msgstr "Wywołanie accept dla IPC nie powiodło się"
 
-#: src/err-codes.h:277
+#: src/err-codes.h:284
 msgid "IPC connect call failed"
 msgstr "Wywołanie connect dla IPC nie powiodło się"
 
-#: src/err-codes.h:278
+#: src/err-codes.h:285
 msgid "Invalid IPC response"
 msgstr "Niepoprawna odpowiedź IPC"
 
-#: src/err-codes.h:279
+#: src/err-codes.h:286
 msgid "Invalid value passed to IPC"
 msgstr "Niepoprawna wartość przekazana do IPC"
 
-#: src/err-codes.h:280
+#: src/err-codes.h:287
 msgid "Incomplete line passed to IPC"
 msgstr "Niekompletna linia przekazana do IPC"
 
-#: src/err-codes.h:281
+#: src/err-codes.h:288
 msgid "Line passed to IPC too long"
 msgstr "Linia przekazana do IPC zbyt długa"
 
-#: src/err-codes.h:282
+#: src/err-codes.h:289
 msgid "Nested IPC commands"
 msgstr "Zagnieżdżone polecenia IPC"
 
-#: src/err-codes.h:283
+#: src/err-codes.h:290
 msgid "No data callback in IPC"
 msgstr "Brak wywołania zwrotnego dla danych w IPC"
 
-#: src/err-codes.h:284
+#: src/err-codes.h:291
 msgid "No inquire callback in IPC"
 msgstr "Brak wywołania wstecznego dla zapytań w IPC"
 
-#: src/err-codes.h:285
+#: src/err-codes.h:292
 msgid "Not an IPC server"
 msgstr "To nie jest serwer IPC"
 
-#: src/err-codes.h:286
+#: src/err-codes.h:293
 msgid "Not an IPC client"
 msgstr "To nie jest klient IPC"
 
-#: src/err-codes.h:287
+#: src/err-codes.h:294
 msgid "Problem starting IPC server"
 msgstr "Problem z uruchomieniem serwera IPC"
 
-#: src/err-codes.h:288
+#: src/err-codes.h:295
 msgid "IPC read error"
 msgstr "Błąd odczytu IPC"
 
-#: src/err-codes.h:289
+#: src/err-codes.h:296
 msgid "IPC write error"
 msgstr "Błąd zapisu IPC"
 
-#: src/err-codes.h:290
+#: src/err-codes.h:297
 msgid "Too much data for IPC layer"
 msgstr "Zbyt dużo danych dla warstwy IPC"
 
-#: src/err-codes.h:291
+#: src/err-codes.h:298
 msgid "Unexpected IPC command"
 msgstr "Nieoczekiwane polecenie IPC"
 
-#: src/err-codes.h:292
+#: src/err-codes.h:299
 msgid "Unknown IPC command"
 msgstr "Nieznane polecenie IPC"
 
-#: src/err-codes.h:293
+#: src/err-codes.h:300
 msgid "IPC syntax error"
 msgstr "Błąd składni IPC"
 
-#: src/err-codes.h:294
+#: src/err-codes.h:301
 msgid "IPC call has been cancelled"
 msgstr "Wywołanie IPC zostało anulowane"
 
-#: src/err-codes.h:295
+#: src/err-codes.h:302
 msgid "No input source for IPC"
 msgstr "Brak źródła wejściowego dla IPC"
 
-#: src/err-codes.h:296
+#: src/err-codes.h:303
 msgid "No output source for IPC"
 msgstr "Brak źródła wyjściowego dla IPC"
 
-#: src/err-codes.h:297
+#: src/err-codes.h:304
 msgid "IPC parameter error"
 msgstr "Błąd parametru IPC"
 
-#: src/err-codes.h:298
+#: src/err-codes.h:305
 msgid "Unknown IPC inquire"
 msgstr "Nieznane zapytanie IPC"
 
-#: src/err-codes.h:299
+#: src/err-codes.h:306
+#, fuzzy
+#| msgid "No crypto engine"
+msgid "Crypto engine too old"
+msgstr "Brak silnika kryptograficznego"
+
+#: src/err-codes.h:307
+msgid "Screen or window too small"
+msgstr ""
+
+#: src/err-codes.h:308
+msgid "Screen or window too large"
+msgstr ""
+
+#: src/err-codes.h:309
+msgid "Required environment variable not set"
+msgstr ""
+
+#: src/err-codes.h:310
+#, fuzzy
+#| msgid "Already exists (LDAP)"
+msgid "User ID already exists"
+msgstr "Już istnieje (LDAP)"
+
+#: src/err-codes.h:311
+#, fuzzy
+#| msgid "Already exists (LDAP)"
+msgid "Name already exists"
+msgstr "Już istnieje (LDAP)"
+
+#: src/err-codes.h:312
+#, fuzzy
+#| msgid "Duplicated value"
+msgid "Duplicated name"
+msgstr "Powtórzona wartość"
+
+#: src/err-codes.h:313
+#, fuzzy
+#| msgid "Certificate too young"
+msgid "Object is too young"
+msgstr "Certyfikat zbyt młody"
+
+#: src/err-codes.h:314
+#, fuzzy
+#| msgid "Provided object is too short"
+msgid "Object is too old"
+msgstr "Dostarczony obiekt jest zbyt mały"
+
+#: src/err-codes.h:315
+#, fuzzy
+#| msgid "Unknown name"
+msgid "Unknown flag"
+msgstr "Nieznana nazwa"
+
+#: src/err-codes.h:316
+#, fuzzy
+#| msgid "Invalid operation code"
+msgid "Invalid execution order"
+msgstr "Niepoprawny kod operacji"
+
+#: src/err-codes.h:317
+msgid "Already fetched"
+msgstr ""
+
+#: src/err-codes.h:318
+msgid "Try again later"
+msgstr ""
+
+#: src/err-codes.h:319
+msgid "System bug detected"
+msgstr ""
+
+#: src/err-codes.h:320
+#, fuzzy
+#| msgid "Unknown system error"
+msgid "Unknown DNS error"
+msgstr "Nieznany błąd systemu"
+
+#: src/err-codes.h:321
+#, fuzzy
+#| msgid "Invalid OID string"
+msgid "Invalid DNS section"
+msgstr "Niepoprawny łańcuch OID"
+
+#: src/err-codes.h:322
+#, fuzzy
+#| msgid "Invalid S-expression"
+msgid "Invalid textual address form"
+msgstr "Niepoprawne S-wyrażenie"
+
+#: src/err-codes.h:323
+#, fuzzy
+#| msgid "Missing issuer certificate"
+msgid "Missing DNS query packet"
+msgstr "Brak certyfikatu wystawcy"
+
+#: src/err-codes.h:324
+msgid "Missing DNS answer packet"
+msgstr ""
+
+#: src/err-codes.h:325
+msgid "Connection closed in DNS"
+msgstr ""
+
+#: src/err-codes.h:326
+#, fuzzy
+#| msgid "Decryption failed"
+msgid "Verification failed in DNS"
+msgstr "Odszyfrowywanie nie powiodło się"
+
+#: src/err-codes.h:327
+#, fuzzy
+#| msgid "Timeout"
+msgid "DNS Timeout"
+msgstr "Upłynął limit czasu"
+
+#: src/err-codes.h:328
+msgid "General LDAP error"
+msgstr "Błąd ogólny LDAP"
+
+#: src/err-codes.h:329
+msgid "General LDAP attribute error"
+msgstr "Błąd ogólny atrybutu LDAP"
+
+#: src/err-codes.h:330
+msgid "General LDAP name error"
+msgstr "Błąd ogólny nazwy LDAP"
+
+#: src/err-codes.h:331
+msgid "General LDAP security error"
+msgstr "Błąd ogólny bezpieczeństwa LDAP"
+
+#: src/err-codes.h:332
+msgid "General LDAP service error"
+msgstr "Błąd ogólny usługi LDAP"
+
+#: src/err-codes.h:333
+msgid "General LDAP update error"
+msgstr "Błąd ogólny aktualizacji LDAP"
+
+#: src/err-codes.h:334
+msgid "Experimental LDAP error code"
+msgstr "Eksperymentalny kod błędu LDAP"
+
+#: src/err-codes.h:335
+msgid "Private LDAP error code"
+msgstr "Prywatny kod błędu LDAP"
+
+#: src/err-codes.h:336
+msgid "Other general LDAP error"
+msgstr "Inny błąd ogólny LDAP"
+
+#: src/err-codes.h:337
+msgid "LDAP connecting failed (X)"
+msgstr "Połączenie z LDAP nie powiodło się (X)"
+
+#: src/err-codes.h:338
+msgid "LDAP referral limit exceeded"
+msgstr "Przekroczony limit odniesień LDAP"
+
+#: src/err-codes.h:339
+msgid "LDAP client loop"
+msgstr "Pętla klienta LDAP"
+
+#: src/err-codes.h:340
+msgid "No LDAP results returned"
+msgstr "Nie zwrócono wyników LDAP"
+
+#: src/err-codes.h:341
+msgid "LDAP control not found"
+msgstr "Nie znaleziono sterowania LDAP"
+
+#: src/err-codes.h:342
+msgid "Not supported by LDAP"
+msgstr "Nie obsługiwane przez LDAP"
+
+#: src/err-codes.h:343
+msgid "LDAP connect error"
+msgstr "Błąd połączenia z LDAP"
+
+#: src/err-codes.h:344
+msgid "Out of memory in LDAP"
+msgstr "Brak pamięci w LDAP"
+
+#: src/err-codes.h:345
+msgid "Bad parameter to an LDAP routine"
+msgstr "Błędny parametr procedury LDAP"
+
+#: src/err-codes.h:346
+msgid "User cancelled LDAP operation"
+msgstr "Operacja LDAP anulowana przez użytkownika"
+
+#: src/err-codes.h:347
+msgid "Bad LDAP search filter"
+msgstr "Błędny filtr wyszukiwania LDAP"
+
+#: src/err-codes.h:348
+msgid "Unknown LDAP authentication method"
+msgstr "Nieznana metoda uwierzytelnienia LDAP"
+
+#: src/err-codes.h:349
+msgid "Timeout in LDAP"
+msgstr "Limit czasu w LDAP"
+
+#: src/err-codes.h:350
+msgid "LDAP decoding error"
+msgstr "Błąd dekodowania LDAP"
+
+#: src/err-codes.h:351
+msgid "LDAP encoding error"
+msgstr "Błąd kodowania LDAP"
+
+#: src/err-codes.h:352
+msgid "LDAP local error"
+msgstr "Błąd lokalny LDAP"
+
+#: src/err-codes.h:353
+msgid "Cannot contact LDAP server"
+msgstr "Nie można połączyć się z serwerem LDAP"
+
+#: src/err-codes.h:354
+msgid "LDAP success"
+msgstr "Sukces LDAP"
+
+#: src/err-codes.h:355
+msgid "LDAP operations error"
+msgstr "Błąd operacji LDAP"
+
+#: src/err-codes.h:356
+msgid "LDAP protocol error"
+msgstr "Błąd protokołu LDAP"
+
+#: src/err-codes.h:357
+msgid "Time limit exceeded in LDAP"
+msgstr "Przekroczony limit czasu w LDAP"
+
+#: src/err-codes.h:358
+msgid "Size limit exceeded in LDAP"
+msgstr "Przekroczony limit rozmiaru w LDAP"
+
+#: src/err-codes.h:359
+msgid "LDAP compare false"
+msgstr "Porównanie LDAP fałszywe"
+
+#: src/err-codes.h:360
+msgid "LDAP compare true"
+msgstr "Porównanie LDAP prawdziwe"
+
+#: src/err-codes.h:361
+msgid "LDAP authentication method not supported"
+msgstr "Nieobsługiwana metoda uwierzytelnienia LDAP"
+
+#: src/err-codes.h:362
+msgid "Strong(er) LDAP authentication required"
+msgstr "Wymagana silniejsze uwierzytelnienie LDAP"
+
+#: src/err-codes.h:363
+msgid "Partial LDAP results+referral received"
+msgstr "Otrzymano częściowe wyniki+odniesienie LDAP"
+
+#: src/err-codes.h:364
+msgid "LDAP referral"
+msgstr "Odniesienie LDAP"
+
+#: src/err-codes.h:365
+msgid "Administrative LDAP limit exceeded"
+msgstr "Przekroczony limit administracyjny LDAP"
+
+#: src/err-codes.h:366
+msgid "Critical LDAP extension is unavailable"
+msgstr "Krytyczne rozszerzenie LDAP jest niedostępne"
+
+#: src/err-codes.h:367
+msgid "Confidentiality required by LDAP"
+msgstr "Zaufanie wymagane przez LDAP"
+
+#: src/err-codes.h:368
+msgid "LDAP SASL bind in progress"
+msgstr "Wiązanie LDAP SASL w trakcie"
+
+#: src/err-codes.h:369
+msgid "No such LDAP attribute"
+msgstr "Nie ma takiego atrybutu LDAP"
+
+#: src/err-codes.h:370
+msgid "Undefined LDAP attribute type"
+msgstr "Niezdefiniowany typ atrybutu LDAP"
+
+#: src/err-codes.h:371
+msgid "Inappropriate matching in LDAP"
+msgstr "Niewłaściwe dopasowanie w LDAP"
+
+#: src/err-codes.h:372
+msgid "Constraint violation in LDAP"
+msgstr "Naruszenie ograniczenia w LDAP"
+
+#: src/err-codes.h:373
+msgid "LDAP type or value exists"
+msgstr "Typ lub wartość LDAP istnieje"
+
+#: src/err-codes.h:374
+msgid "Invalid syntax in LDAP"
+msgstr "Błędna składnia w LDAP"
+
+#: src/err-codes.h:375
+msgid "No such LDAP object"
+msgstr "Nie ma takiego obiektu LDAP"
+
+#: src/err-codes.h:376
+msgid "LDAP alias problem"
+msgstr "Problem z aliasem LDAP"
+
+#: src/err-codes.h:377
+msgid "Invalid DN syntax in LDAP"
+msgstr "Błędna składnia DN w LDAP"
+
+#: src/err-codes.h:378
+msgid "LDAP entry is a leaf"
+msgstr "Wpis LDAP jest liściem"
+
+#: src/err-codes.h:379
+msgid "LDAP alias dereferencing problem"
+msgstr "Problem z rozwinięciem aliasu LDAP"
+
+#: src/err-codes.h:380
+msgid "LDAP proxy authorization failure (X)"
+msgstr "Błąd autoryzacji do proxy LDAP (X)"
+
+#: src/err-codes.h:381
+msgid "Inappropriate LDAP authentication"
+msgstr "Niewłaściwe uwierzytelnienie LDAP"
+
+#: src/err-codes.h:382
+msgid "Invalid LDAP credentials"
+msgstr "Błędne dane uwierzytelniające LDAP"
+
+#: src/err-codes.h:383
+msgid "Insufficient access for LDAP"
+msgstr "Niewystarczający dostęp dla LDAP"
+
+#: src/err-codes.h:384
+msgid "LDAP server is busy"
+msgstr "Serwer LDAP jest zajęty"
+
+#: src/err-codes.h:385
+msgid "LDAP server is unavailable"
+msgstr "Serwer LDAP jest niedostępny"
+
+#: src/err-codes.h:386
+msgid "LDAP server is unwilling to perform"
+msgstr "Serwer LDAP nie zamierza wykonać żądania"
+
+#: src/err-codes.h:387
+msgid "Loop detected by LDAP"
+msgstr "Pętla wykryta przez LDAP"
+
+#: src/err-codes.h:388
+msgid "LDAP naming violation"
+msgstr "Naruszenie nazw LDAP"
+
+#: src/err-codes.h:389
+msgid "LDAP object class violation"
+msgstr "Naruszenie klasy obiektu LDAP"
+
+#: src/err-codes.h:390
+msgid "LDAP operation not allowed on non-leaf"
+msgstr "Operacja LDAP nie jest dozwolona na nie-liściu"
+
+#: src/err-codes.h:391
+msgid "LDAP operation not allowed on RDN"
+msgstr "Operacja LDAP nie jest dozwolona na RDN"
+
+#: src/err-codes.h:392
+msgid "Already exists (LDAP)"
+msgstr "Już istnieje (LDAP)"
+
+#: src/err-codes.h:393
+msgid "Cannot modify LDAP object class"
+msgstr "Nie można zmodyfikować klasy obiektu LDAP"
+
+#: src/err-codes.h:394
+msgid "LDAP results too large"
+msgstr "Wyniki LDAP zbyt duże"
+
+#: src/err-codes.h:395
+msgid "LDAP operation affects multiple DSAs"
+msgstr "Operacja LDAP obejmuje wiele DSA"
+
+#: src/err-codes.h:396
+msgid "Virtual LDAP list view error"
+msgstr "Błąd widoku wirtualnej listy LDAP"
+
+#: src/err-codes.h:397
+msgid "Other LDAP error"
+msgstr "Inny błąd LDAP"
+
+#: src/err-codes.h:398
+msgid "Resources exhausted in LCUP"
+msgstr "Zasoby wyczerpane w LCUP"
+
+#: src/err-codes.h:399
+msgid "Security violation in LCUP"
+msgstr "Naruszenie bezpieczeństwa w LCUP"
+
+#: src/err-codes.h:400
+msgid "Invalid data in LCUP"
+msgstr "Błędne dane w LCUP"
+
+#: src/err-codes.h:401
+msgid "Unsupported scheme in LCUP"
+msgstr "Nieobsługiwany schemat w LCUP"
+
+#: src/err-codes.h:402
+msgid "Reload required in LCUP"
+msgstr "Wymagane przeładowanie w LCUP"
+
+#: src/err-codes.h:403
+msgid "LDAP cancelled"
+msgstr "LDAP anulowane"
+
+#: src/err-codes.h:404
+msgid "No LDAP operation to cancel"
+msgstr "Brak operacji LDAP do anulowania"
+
+#: src/err-codes.h:405
+msgid "Too late to cancel LDAP"
+msgstr "Za późno na anulowanie LDAP"
+
+#: src/err-codes.h:406
+msgid "Cannot cancel LDAP"
+msgstr "Nie można anulować LDAP"
+
+#: src/err-codes.h:407
+msgid "LDAP assertion failed"
+msgstr "Zapewnienie LDAP nie powiodło się"
+
+#: src/err-codes.h:408
+msgid "Proxied authorization denied by LDAP"
+msgstr "Autoryzacja przez proxy odrzucona przez LDAP"
+
+#: src/err-codes.h:409
 msgid "User defined error code 1"
 msgstr "Zdefiniowany przez użytkownika kod błędu 1"
 
-#: src/err-codes.h:300
+#: src/err-codes.h:410
 msgid "User defined error code 2"
 msgstr "Zdefiniowany przez użytkownika kod błędu 2"
 
-#: src/err-codes.h:301
+#: src/err-codes.h:411
 msgid "User defined error code 3"
 msgstr "Zdefiniowany przez użytkownika kod błędu 3"
 
-#: src/err-codes.h:302
+#: src/err-codes.h:412
 msgid "User defined error code 4"
 msgstr "Zdefiniowany przez użytkownika kod błędu 4"
 
-#: src/err-codes.h:303
+#: src/err-codes.h:413
 msgid "User defined error code 5"
 msgstr "Zdefiniowany przez użytkownika kod błędu 5"
 
-#: src/err-codes.h:304
+#: src/err-codes.h:414
 msgid "User defined error code 6"
 msgstr "Zdefiniowany przez użytkownika kod błędu 6"
 
-#: src/err-codes.h:305
+#: src/err-codes.h:415
 msgid "User defined error code 7"
 msgstr "Zdefiniowany przez użytkownika kod błędu 7"
 
-#: src/err-codes.h:306
+#: src/err-codes.h:416
 msgid "User defined error code 8"
 msgstr "Zdefiniowany przez użytkownika kod błędu 8"
 
-#: src/err-codes.h:307
+#: src/err-codes.h:417
 msgid "User defined error code 9"
 msgstr "Zdefiniowany przez użytkownika kod błędu 9"
 
-#: src/err-codes.h:308
+#: src/err-codes.h:418
 msgid "User defined error code 10"
 msgstr "Zdefiniowany przez użytkownika kod błędu 10"
 
-#: src/err-codes.h:309
+#: src/err-codes.h:419
 msgid "User defined error code 11"
 msgstr "Zdefiniowany przez użytkownika kod błędu 11"
 
-#: src/err-codes.h:310
+#: src/err-codes.h:420
 msgid "User defined error code 12"
 msgstr "Zdefiniowany przez użytkownika kod błędu 12"
 
-#: src/err-codes.h:311
+#: src/err-codes.h:421
 msgid "User defined error code 13"
 msgstr "Zdefiniowany przez użytkownika kod błędu 13"
 
-#: src/err-codes.h:312
+#: src/err-codes.h:422
 msgid "User defined error code 14"
 msgstr "Zdefiniowany przez użytkownika kod błędu 14"
 
-#: src/err-codes.h:313
+#: src/err-codes.h:423
 msgid "User defined error code 15"
 msgstr "Zdefiniowany przez użytkownika kod błędu 15"
 
-#: src/err-codes.h:314
+#: src/err-codes.h:424
 msgid "User defined error code 16"
 msgstr "Zdefiniowany przez użytkownika kod błędu 16"
 
-#: src/err-codes.h:315
+#: src/err-codes.h:425
 msgid "System error w/o errno"
 msgstr "Błąd systemowy bez errno"
 
-#: src/err-codes.h:316
+#: src/err-codes.h:426
 msgid "Unknown system error"
 msgstr "Nieznany błąd systemu"
 
-#: src/err-codes.h:317
+#: src/err-codes.h:427
 msgid "End of file"
 msgstr "Koniec pliku"
 
-#: src/err-codes.h:318
+#: src/err-codes.h:428
 msgid "Unknown error code"
 msgstr "Nieznany kod błędu"
 
-#: src/gpg-error.c:388
+#: src/gpg-error.c:450
 #, c-format
 msgid "Usage: %s GPG-ERROR [...]\n"
 msgstr "Składnia: %s BŁĄD-GPG [...]\n"
 
-#: src/gpg-error.c:444
+#: src/gpg-error.c:633
 #, c-format
 msgid "%s: warning: could not recognize %s\n"
 msgstr "%s: uwaga: nie rozpoznano %s\n"

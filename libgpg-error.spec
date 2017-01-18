@@ -1,7 +1,7 @@
 # This is a template.  The dist target uses it to create the real file.
 Summary: libgpg-error
 Name: libgpg-error
-Version: 1.18
+Version: 1.26
 Release: 1
 URL: ftp://ftp.gnupg.org/gcrypt/alpha/libgpg-error/
 Source: ftp://ftp.gnupg.org/gcrypt/alpha/libgpg-error/%{name}-%{version}.tar.gz

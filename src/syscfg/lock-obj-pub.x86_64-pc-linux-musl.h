@@ -1,4 +1,4 @@
-## lock-obj-pub.i486-pc-kfreebsd-gnu.h
+## lock-obj-pub.x86_64-pc-linux-musl.h
 ## File created by gen-posix-lock-obj - DO NOT EDIT
 ## To be included by mkheader into gpg-error.h
 
@@ -6,13 +6,15 @@ typedef struct
 {
   long _vers;
   union {
-    volatile char _priv[24];
+    volatile char _priv[40];
     long _x_align;
     long *_xp_align;
   } u;
 } gpgrt_lock_t;
 
 #define GPGRT_LOCK_INITIALIZER {1,{{0,0,0,0,0,0,0,0, \
+                                    0,0,0,0,0,0,0,0, \
+                                    0,0,0,0,0,0,0,0, \
                                     0,0,0,0,0,0,0,0, \
                                     0,0,0,0,0,0,0,0}}}
 ##

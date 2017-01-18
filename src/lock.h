@@ -14,11 +14,13 @@
    Lesser General Public License for more details.
 
    You should have received a copy of the GNU Lesser General Public
-   License along with this program; if not, see <http://www.gnu.org/licenses/>.
+   License along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
 #ifndef LOCK_H
 #define LOCK_H
+
+void _gpgrt_lock_set_lock_clamp (void (*pre)(void), void (*post)(void));
 
 
 #endif /*LOCK_H*/

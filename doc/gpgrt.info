@@ -1,6 +1,6 @@
-This is gpgrt.info, produced by makeinfo version 5.2 from gpgrt.texi.
+This is gpgrt.info, produced by makeinfo version 6.3 from gpgrt.texi.
 
-This manual is for Libgpg-error (version 1.18, 15 October 2014), which
+This manual is for Libgpg-error (version 1.26, 2 December 2016), which
 is a library for code used by all GnuPG related packages.
 
 Copyright (C) 2014 g10 Code GmbH
@@ -22,7 +22,7 @@ File: gpgrt.info,  Node: Top,  Next: Introduction,  Up: (dir)
 The Libgpg-error Library
 ************************
 
-This manual is for Libgpg-error (version 1.18, 15 October 2014), which
+This manual is for Libgpg-error (version 1.26, 2 December 2016), which
 is a library for code used by all GnuPG related packages.
 
 Copyright (C) 2014 g10 Code GmbH
@@ -78,7 +78,7 @@ File: gpgrt.info,  Node: Getting Started,  Next: Features,  Up: Introduction
 This manual documents the Libgpg-error library application programming
 interface (API). The goal is to that all functions and data types
 provided by the library are explained.  However, for now this is only a
-stub and not very usefull.
+stub and not very useful.
 
 
 File: gpgrt.info,  Node: Features,  Next: Overview,  Prev: Getting Started,  Up: Introduction
@@ -269,7 +269,7 @@ File: gpgrt.info,  Node: Generalities,  Next: Tools,  Prev: Preparation,  Up: To
 3 Generalities
 **************
 
-TBD. (Description of the error fucntion may be taken from Libgcrypt.)
+TBD. (Description of the error function may be taken from Libgcrypt.)
 
 
 File: gpgrt.info,  Node: Tools,  Next: Library Copying,  Prev: Generalities,  Up: Top
@@ -1243,20 +1243,20 @@ Tag Table:
 Node: Top729
 Node: Introduction2103
 Node: Getting Started2625
-Node: Features2983
-Node: Overview3112
-Node: Preparation3308
-Node: Header4109
-Node: Building sources5194
-Node: Building sources using Automake6957
-Node: Initializing the library8899
-Node: Multi-Threading10087
-Node: Generalities10229
-Node: Tools10416
-Node: gpg-error-config10586
-Node: Library Copying12165
-Node: Copying40266
-Node: Concept Index59436
-Node: Function and Data Index59733
+Node: Features2982
+Node: Overview3111
+Node: Preparation3307
+Node: Header4108
+Node: Building sources5193
+Node: Building sources using Automake6956
+Node: Initializing the library8898
+Node: Multi-Threading10086
+Node: Generalities10228
+Node: Tools10415
+Node: gpg-error-config10585
+Node: Library Copying12164
+Node: Copying40265
+Node: Concept Index59435
+Node: Function and Data Index59732
 
 End Tag Table

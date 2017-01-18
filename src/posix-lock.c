@@ -15,7 +15,7 @@
    Lesser General Public License for more details.
 
    You should have received a copy of the GNU Lesser General Public
-   License along with this program; if not, see <http://www.gnu.org/licenses/>.
+   License along with this program; if not, see <https://www.gnu.org/licenses/>.
 
    Parts of the code, in particular use_pthreads_p, are based on code
    from gettext, written by Bruno Haible <bruno@clisp.org>, 2005.
@@ -33,6 +33,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
+#include <assert.h>
 
 #if USE_POSIX_THREADS
 # include <pthread.h>
@@ -41,6 +42,14 @@
 #include "gpg-error.h"
 #include "lock.h"
 #include "posix-lock-obj.h"
+
+
+/*
+ * Functions called before and after blocking syscalls.
+ * gpgrt_set_syscall_clamp is used to set them.
+ */
+static void (*pre_lock_func)(void);
+static void (*post_lock_func)(void);
 
 
 #if USE_POSIX_THREADS
@@ -88,7 +97,10 @@ use_pthread_p (void)
           /* Thread creation works.  */
           void *retval;
           if (pthread_join (thread, &retval) != 0)
-            abort ();
+            {
+              assert (!"pthread_join");
+              abort ();
+            }
           result = 1;
         }
       tested = 1;
@@ -99,6 +111,16 @@ use_pthread_p (void)
 #endif /*USE_POSIX_THREADS*/
 
 
+/* Helper to set the clamp functions.  This is called as a helper from
+ * _gpgrt_set_syscall_clamp to keep the function pointers local. */
+void
+_gpgrt_lock_set_lock_clamp (void (*pre)(void), void (*post)(void))
+{
+  pre_lock_func = pre;
+  post_lock_func = post;
+}
+
+
 
 static _gpgrt_lock_t *
 get_lock_object (gpgrt_lock_t *lockhd)
@@ -106,9 +128,15 @@ get_lock_object (gpgrt_lock_t *lockhd)
   _gpgrt_lock_t *lock = (_gpgrt_lock_t*)lockhd;
 
   if (lock->vers != LOCK_ABI_VERSION)
-    abort ();
+    {
+      assert (!"lock ABI version");
+      abort ();
+    }
   if (sizeof (gpgrt_lock_t) < sizeof (_gpgrt_lock_t))
-    abort ();
+    {
+      assert (!"sizeof lock obj");
+      abort ();
+    }
 
   return lock;
 }
@@ -126,7 +154,10 @@ _gpgrt_lock_init (gpgrt_lock_t *lockhd)
   if (!lock->vers)
     {
       if (sizeof (gpgrt_lock_t) < sizeof (_gpgrt_lock_t))
-        abort ();
+        {
+          assert (!"sizeof lock obj");
+          abort ();
+        }
       lock->vers = LOCK_ABI_VERSION;
     }
   else /* Run the usual check.  */
@@ -142,7 +173,7 @@ _gpgrt_lock_init (gpgrt_lock_t *lockhd)
   else
     rc = 0; /* Threads are not used.  */
 #else /* Unknown thread system.  */
-  rc = GPG_ERR_NOT_IMPLEMENTED;
+  rc = lock->vers == LOCK_ABI_NOT_AVAILABLE? 0 : GPG_ERR_NOT_IMPLEMENTED;
 #endif /* Unknown thread system.  */
 
   return rc;
@@ -158,14 +189,18 @@ _gpgrt_lock_lock (gpgrt_lock_t *lockhd)
 #if USE_POSIX_THREADS
   if (use_pthread_p())
     {
+      if (pre_lock_func)
+        pre_lock_func ();
       rc = pthread_mutex_lock (&lock->u.mtx);
       if (rc)
         rc = gpg_err_code_from_errno (rc);
+      if (post_lock_func)
+        post_lock_func ();
     }
   else
     rc = 0; /* Threads are not used.  */
 #else /* Unknown thread system.  */
-  rc = GPG_ERR_NOT_IMPLEMENTED;
+  rc = lock->vers == LOCK_ABI_NOT_AVAILABLE? 0 : GPG_ERR_NOT_IMPLEMENTED;
 #endif /* Unknown thread system.  */
 
   return rc;
@@ -188,7 +223,7 @@ _gpgrt_lock_trylock (gpgrt_lock_t *lockhd)
   else
     rc = 0; /* Threads are not used.  */
 #else /* Unknown thread system.  */
-  rc = GPG_ERR_NOT_IMPLEMENTED;
+  rc = lock->vers == LOCK_ABI_NOT_AVAILABLE? 0 : GPG_ERR_NOT_IMPLEMENTED;
 #endif /* Unknown thread system.  */
 
   return rc;
@@ -211,7 +246,7 @@ _gpgrt_lock_unlock (gpgrt_lock_t *lockhd)
   else
     rc = 0; /* Threads are not used.  */
 #else /* Unknown thread system.  */
-  rc = GPG_ERR_NOT_IMPLEMENTED;
+  rc = lock->vers == LOCK_ABI_NOT_AVAILABLE? 0 : GPG_ERR_NOT_IMPLEMENTED;
 #endif /* Unknown thread system.  */
 
   return rc;
@@ -242,7 +277,7 @@ _gpgrt_lock_destroy (gpgrt_lock_t *lockhd)
   else
     rc = 0; /* Threads are not used.  */
 #else /* Unknown thread system.  */
-  rc = GPG_ERR_NOT_IMPLEMENTED;
+  rc = lock->vers == LOCK_ABI_NOT_AVAILABLE? 0 : GPG_ERR_NOT_IMPLEMENTED;
 #endif /* Unknown thread system.  */
 
   return rc;

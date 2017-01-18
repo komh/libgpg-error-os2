@@ -1,3 +1,167 @@
+Noteworthy changes in version 1.26 (2016-12-21) [C21/A21/R0]
+-----------------------------------------------
+
+ * New option --desc for gpg-error.
+
+ * Interface changes relative to the 1.25 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPG_ERR_UNKNOWN_FLAG             NEW.
+ GPG_ERR_INV_ORDER                NEW.
+ GPG_ERR_ALREADY_FETCHED          NEW.
+ GPG_ERR_TRY_LATER                NEW.
+ GPG_ERR_SYSTEM_BUG               NEW.
+ GPG_ERR_DNS_UNKNOWN	          NEW.
+ GPG_ERR_DNS_SECTION	          NEW.
+ GPG_ERR_DNS_ADDRESS	          NEW.
+ GPG_ERR_DNS_NO_QUERY	          NEW.
+ GPG_ERR_DNS_NO_ANSWER	          NEW.
+ GPG_ERR_DNS_CLOSED	          NEW.
+ GPG_ERR_DNS_VERIFY	          NEW.
+ GPG_ERR_DNS_TIMEOUT	          NEW.
+
+
+Noteworthy changes in version 1.25 (2016-11-14) [C20/A20/R0]
+-----------------------------------------------
+
+ * New interface gpgrt_get_syscall_clamp to allow libaries to make use
+   of Libgpg-error's system call wrapper functions.
+
+ * gpgrt_poll does now work under Windows.
+
+ * Fixed bug in the locking code when used with the nPth threading
+   library.
+
+ * Added support for {i686,x86_64}-apple-darwin.
+
+ * Added new error codes.
+
+ * Interface changes relative to the 1.23 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ gpgrt_get_syscall_clamp          NEW.
+ GPG_ERR_ENGINE_TOO_OLD	          NEW.
+ GPG_ERR_WINDOW_TOO_SMALL         NEW.
+ GPG_ERR_WINDOW_TOO_LARGE         NEW.
+ GPG_ERR_MISSING_ENVVAR	          NEW.
+ GPG_ERR_USER_ID_EXISTS           NEW.
+ GPG_ERR_NAME_EXISTS              NEW.
+ GPG_ERR_DUP_NAME                 NEW.
+ GPG_ERR_TOO_OLD                  NEW.
+ GPG_ERR_TOO_YOUNG                NEW.
+
+
+Noteworthy changes in version 1.24 (2016-07-14) [C19/A19/R1]
+-----------------------------------------------
+
+ * Fixes a bug in es_fclose_snatch when used used after es_fseek.
+
+ * Fixes building without thread support.
+
+ * New configure option --disable-tests.
+
+
+Noteworthy changes in version 1.23 (2016-06-15) [C19/A19/R0]
+-----------------------------------------------
+
+ * Fixes an assertion failure due to es_flush on read/write streams.
+
+ * Fixes a bug with a too short memory limit is es_fopenmen.
+
+ * Cross-build support for powerpc-unknown-linux-gnuspe and
+   tilegx-unknown-linux-gnu architectures.
+
+ * Interface changes relative to the 1.22 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPG_ERR_SUBKEYS_EXP_OR_REV       NEW.
+
+
+Noteworthy changes in version 1.22 (2016-04-25) [C18/A18/R0]
+-----------------------------------------------
+
+ * New functions and macros to to provide iconv(3) on Windows.
+
+ * Support for LeakSanitizer with the gpgrt_annotate_leaked_object
+   inline function.
+
+ * Interface changes relative to the 1.21 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPG_ERR_DB_CORRUPTED             NEW.
+ gpgrt_annotate_leaked_object     NEW inline func.
+ GPGRT_ENABLE_W32_ICONV_MACROS    NEW.
+ gpgrt_w32_iconv_open             NEW.
+ gpgrt_w32_iconv_close            NEW.
+ gpgrt_w32_iconv                  NEW.
+
+
+Noteworthy changes in version 1.21 (2015-12-12) [C17/A17/R0]
+-----------------------------------------------
+
+ * New functions gpgrt_poll and gpgrt_set_nonblock.  For now only
+   pipes and sockets on Unix are supported.
+
+ * Fixes gettext output encoding problems on Windows.
+
+ * Interface changes relative to the 1.20 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ gpgrt_set_nonblock               NEW.
+ gpgrt_get_nonblock               NEW.
+ gpgrt_poll                       NEW.
+ gpgrt_poll_t                     NEW type.
+ es_poll_t                        NEW type.
+ es_set_nonblock                  NEW macro.
+ es_get_nonblock                  NEW macro.
+ es_poll                          NEW macro.
+ GPG_ERR_TRUE                     NEW.
+ GPG_ERR_FALSE                    NEW.
+ GPG_ERR_NO_NAME                  NEW.
+ GPG_ERR_NO_KEY                   NEW.
+ GPG_ERR_SERVER_FAILED            NEW.
+
+
+Noteworthy changes in version 1.20 (2015-08-26) [C16/A16/R0]
+-----------------------------------------------
+
+ * New macros for GCC attributes.
+
+ * Make es_set_binary actually work for Windows.
+
+ * Allow building without thread support.
+
+ * Build without a build timestamp by default.
+
+ * Interface changes relative to the 1.19 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPGRT_VERSION                    NEW macro.
+ GPGRT_VERSION_NUMBER             NEW macro.
+ GPGRT_INLINE                     NEW macro.
+ GPGRT_GCC_VERSION                NEW macro.
+ GPGRT_ATTR_NORETURN              NEW macro.
+ GPGRT_ATTR_PRINTF                NEW macro.
+ GPGRT_ATTR_NR_PRINTF             NEW macro.
+ GPGRT_ATTR_FORMAT_ARG            NEW macro.
+ GPGRT_ATTR_SENTINEL              NEW macro.
+ GPGRT_ATTR_USED                  NEW macro.
+ GPGRT_ATTR_UNUSED                NEW macro.
+ GPGRT_ATTR_DEPRECATED            NEW macro.
+ GPGRT_ATTR_PURE                  NEW macro.
+ GPGRT_ATTR_MALLOC                NEW macro.
+ GPGRT_HAVE_MACRO_FUNCTION        NEW macro.
+ GPGRT_HAVE_PRAGMA_GCC_PUSH       NEW macro.
+
+
+Noteworthy changes in version 1.19 (2015-04-10) [C15/A15/R0]
+-----------------------------------------------
+
+ * New set of error codes for use with LDAP.
+
+ * New options --help and --defines for gpg-error.
+
+ * Allow building with gcc 5.
+
+ * Interface changes relative to the 1.18 release:
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ GPG_ERR_LDAP_*                   NEW.
+
+
 Noteworthy changes in version 1.18 (2015-01-26) [C14/A14/R0]
 -----------------------------------------------
 
@@ -332,8 +496,8 @@ Noteworthy changes in version 1.4 (2006-09-14)
  * New error codes for the Assuan IPC library.
 
  * New error code GPG_ERR_MISSING_ERRNO to be used in cases when a
-   system accidently does not set errno but a system error definitely
-   occured.
+   system accidentally does not set errno but a system error
+   definitely occurred.
 
  * New error source GPG_ERR_SOURCE_ANY to allow proper use of
    libgpg-error even if a specific source is not available.

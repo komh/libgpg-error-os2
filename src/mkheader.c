@@ -23,7 +23,7 @@
 #define LINESIZE 1024
 
 static const char *host_os;
-static const char *host_triplet;
+static char *host_triplet;
 static char *srcdir;
 static const char *hdr_version;
 static const char *hdr_version_number;
@@ -33,6 +33,7 @@ static int have_stdint_h;
 static int have_w32_system;
 static int have_w64_system;
 static char *replacement_for_off_type;
+static int use_posix_threads;
 
 /* Various state flags.  */
 static int stdint_h_included;
@@ -60,6 +61,46 @@ xstrdup (const char *string)
     }
   strcpy (p, string);
   return p;
+}
+
+
+/* Return a malloced string with TRIPLET.  If TRIPLET has an alias
+   return that instead.  In general build-aux/config.sub should do the
+   aliasing but some returned triplets are anyway identical and thus we
+   use this function to map it to the canonical form.  */
+static char *
+canon_host_triplet (const char *triplet)
+{
+  struct {
+    const char *name;
+    const char *alias;
+  } tbl[] = {
+    {"i486-pc-linux-gnu", "i686-pc-linux-gnu" },
+    {"i586-pc-linux-gnu" },
+    {"i486-pc-gnu", "i686-pc-gnu"},
+    {"i586-pc-gnu"},
+    {"i486-pc-kfreebsd-gnu", "i686-pc-kfreebsd-gnu"},
+    {"i586-pc-kfreebsd-gnu"},
+    {"x86_64-pc-linux-gnuhardened1", "x86_64-pc-linux-gnu" },
+    {"powerpc-unknown-linux-gnuspe", "powerpc-unknown-linux-gnu" },
+
+    { NULL }
+  };
+  int i;
+  const char *lastalias = NULL;
+
+  for (i=0; tbl[i].name; i++)
+    {
+      if (tbl[i].alias)
+        lastalias = tbl[i].alias;
+      if (!strcmp (tbl[i].name, triplet))
+        {
+          if (!lastalias)
+            break; /* Ooops: first entry has no alias.  */
+          return xstrdup (lastalias);
+        }
+    }
+  return xstrdup (triplet);
 }
 
 
@@ -114,6 +155,8 @@ parse_config_h (const char *fname)
           xfree (replacement_for_off_type);
           replacement_for_off_type = xstrdup (p1);
         }
+      else if (!strcmp (p1, "USE_POSIX_THREADS"))
+        use_posix_threads = 1;
     }
 
   if (ferror (fp))
@@ -481,6 +524,7 @@ main (int argc, char **argv)
   const char *fname, *s;
   char *p1, *p2;
   const char *config_h;
+  const char *host_triplet_raw;
 
   if (argc)
     {
@@ -496,11 +540,13 @@ main (int argc, char **argv)
       return 1;
     }
   host_os = argv[0];
-  host_triplet = argv[1];
+  host_triplet_raw = argv[1];
   fname = argv[2];
   config_h = argv[3];
   hdr_version = argv[4];
   hdr_version_number = argv[5];
+
+  host_triplet = canon_host_triplet (host_triplet_raw);
 
   srcdir = malloc (strlen (fname) + 2 + 1);
   if (!srcdir)
@@ -554,8 +600,14 @@ main (int argc, char **argv)
       if (!strcmp (p1, "configure_input"))
         {
           s = strrchr (fname, '/');
-          printf ("Do not edit.  Generated from %s for %s.",
-                  s? s+1 : fname, host_triplet);
+          printf ("Do not edit.  Generated from %s for:\n%*s",
+                  s? s+1 : fname, (int)(p1 - line) + 13, "");
+          if (!strcmp (host_triplet, host_triplet_raw))
+            printf ("%s", host_triplet);
+          else
+            printf ("%s (%s)", host_triplet, host_triplet_raw);
+          if (!use_posix_threads && !have_w32_system && !have_w64_system)
+            fputs (" NO-THREADS", stdout);
           fputs (p2, stdout);
         }
       else if (!write_special (fname, lnr, p1))
@@ -565,7 +617,7 @@ main (int argc, char **argv)
           putchar ('@');
           fputs (p2, stdout);
         }
-      else if (p2 && *p2)
+      else if (*p2)
         {
           fputs (p2, stdout);
         }
@@ -593,5 +645,6 @@ main (int argc, char **argv)
 
   fclose (fp);
 
+  xfree (host_triplet);
   return 0;
 }

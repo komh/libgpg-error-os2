@@ -14,7 +14,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this program; if not, see <http://www.gnu.org/licenses/>.
+ * License along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <stdarg.h>
@@ -23,6 +23,9 @@
 
 #ifndef PGM
 # error Macro PGM not defined.
+#endif
+#ifndef DIM
+# define DIM(array) (sizeof (array) / sizeof (*array))
 #endif
 
 
