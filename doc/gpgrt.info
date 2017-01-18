@@ -1,6 +1,6 @@
 This is gpgrt.info, produced by makeinfo version 6.3 from gpgrt.texi.
 
-This manual is for Libgpg-error (version 1.26, 2 December 2016), which
+This manual is for Libgpg-error (version 1.26, 19 January 2017), which
 is a library for code used by all GnuPG related packages.
 
 Copyright (C) 2014 g10 Code GmbH
@@ -22,7 +22,7 @@ File: gpgrt.info,  Node: Top,  Next: Introduction,  Up: (dir)
 The Libgpg-error Library
 ************************
 
-This manual is for Libgpg-error (version 1.26, 2 December 2016), which
+This manual is for Libgpg-error (version 1.26, 19 January 2017), which
 is a library for code used by all GnuPG related packages.
 
 Copyright (C) 2014 g10 Code GmbH

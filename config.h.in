@@ -68,6 +68,9 @@
 /* Define to 1 if you have the `memrchr' function. */
 #undef HAVE_MEMRCHR
 
+/* Defined if we run on an OS/2 API based system */
+#undef HAVE_OS2_SYSTEM
+
 /* Define if the <pthread.h> defines PTHREAD_MUTEX_RECURSIVE. */
 #undef HAVE_PTHREAD_MUTEX_RECURSIVE
 
@@ -128,8 +131,7 @@
 /* The host triplet */
 #undef HOST_TRIPLET_STRING
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
 
 /* Name of package */
@@ -195,6 +197,13 @@
 /* Define if references to the POSIX multithreading library should be made
    weak. */
 #undef USE_POSIX_THREADS_WEAK
+
+/* Define if the GNU Pth multithreading library can be used. */
+#undef USE_PTH_THREADS
+
+/* Define if references to the GNU Pth multithreading library should be made
+   weak. */
+#undef USE_PTH_THREADS_WEAK
 
 /* Define if the old Solaris multithreading library can be used. */
 #undef USE_SOLARIS_THREADS
